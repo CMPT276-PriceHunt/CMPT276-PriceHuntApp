@@ -40,5 +40,9 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this,ProfileActivity::class.java)
             startActivity(intent)
         }
+        signUpLink.setOnClickListener{
+            val intent = Intent(this,signUpActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
