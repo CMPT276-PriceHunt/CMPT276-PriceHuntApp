@@ -52,7 +52,7 @@
             android:background="@drawable/rounded_corner_black"
             android:padding="16dp"
             android:inputType="text"
-            android:id="@+id/username_input"/>
+            android:id="@+id/username_signup"/>
         <!-- making the textbox that users input into, box is made in rounded_corner.xml -->
 
         <EditText
@@ -66,11 +66,11 @@
             android:background="@drawable/rounded_corner_black"
             android:padding="16dp"
             android:inputType="textPassword"
-            android:id="@+id/password_input"/>
+            android:id="@+id/password_signup"/>
         <!-- using the same code block as username, but changed to password instead -->
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button_id_Login"
+            android:id="@+id/button_id_signup"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
