@@ -32,6 +32,7 @@ class LoginActivity : AppCompatActivity() {
         passwordInput = findViewById(R.id.password_input)
         loginBtn = findViewById(R.id.login_btn)
         signUpLink = findViewById(R.id.signUpLink)
+
         loginBtn.setOnClickListener{
             val username = usernameInput.text.toString()
             val password = passwordInput.text.toString()
