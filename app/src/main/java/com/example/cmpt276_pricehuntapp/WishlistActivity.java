@@ -39,7 +39,6 @@ public class WishlistActivity extends AppCompatActivity {
         rvFolders = findViewById(R.id.rv_folders);
         fabAddFolder = findViewById(R.id.fab_add_folder);
 
-        // Load folders from SharedPreferences instead of Intent
         loadFolders();
 
         folderAdapter = new WishlistFolderAdapter(folders);
@@ -69,7 +68,7 @@ public class WishlistActivity extends AppCompatActivity {
         final EditText input = new EditText(this);
         builder.setView(input);
 
-        builder.setPositiveButton("Confirm", (dialog, which) -> {
+        builder.setPositiveButton("Yes", (dialog, which) -> {
             String folderName = input.getText().toString();
             if (!folderName.isEmpty()) {
                 folders.add(new WishlistFolder(folderName));
@@ -82,7 +81,7 @@ public class WishlistActivity extends AppCompatActivity {
         builder.show();
     }
 
-    private void saveFolders() {
+    public void saveFolders() {
         String foldersJson = gson.toJson(folders);
         prefs.edit().putString(FOLDERS_KEY, foldersJson).apply();
     }

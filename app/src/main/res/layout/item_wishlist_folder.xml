@@ -20,6 +20,13 @@
             android:textStyle="bold" />
 
         <ImageButton
+            android:id="@+id/btn_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_delete" />
+
+        <ImageButton
             android:id="@+id/btn_expand"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -34,3 +41,4 @@
         android:visibility="gone" />
 
 </LinearLayout>
+
