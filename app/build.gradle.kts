@@ -52,4 +52,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.material)
+    testImplementation(libs.junit)
+    implementation("com.google.android.material:material:1.5.0")
+    implementation("com.google.code.gson:gson:2.10.1")
 }
