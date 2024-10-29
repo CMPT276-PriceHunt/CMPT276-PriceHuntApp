@@ -1,7 +1,9 @@
 package com.example.cmpt276_pricehuntapp;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AlertDialog;
@@ -23,6 +25,7 @@ public class WishlistActivity extends AppCompatActivity {
 
     private RecyclerView rvFolders;
     private FloatingActionButton fabAddFolder;
+    private Button btnBackToHome; // 新增
     private ArrayList<WishlistFolder> folders;
     private WishlistFolderAdapter folderAdapter;
     private SharedPreferences prefs;
@@ -38,6 +41,7 @@ public class WishlistActivity extends AppCompatActivity {
 
         rvFolders = findViewById(R.id.rv_folders);
         fabAddFolder = findViewById(R.id.fab_add_folder);
+        btnBackToHome = findViewById(R.id.btn_back_to_home);
 
         loadFolders();
 
@@ -46,6 +50,13 @@ public class WishlistActivity extends AppCompatActivity {
         rvFolders.setAdapter(folderAdapter);
 
         fabAddFolder.setOnClickListener(v -> showAddFolderDialog());
+
+
+        btnBackToHome.setOnClickListener(v -> {
+            Intent intent = new Intent(WishlistActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        });
     }
 
     private void loadFolders() {
@@ -68,7 +79,7 @@ public class WishlistActivity extends AppCompatActivity {
         final EditText input = new EditText(this);
         builder.setView(input);
 
-        builder.setPositiveButton("Yes", (dialog, which) -> {
+        builder.setPositiveButton("Confirm", (dialog, which) -> {
             String folderName = input.getText().toString();
             if (!folderName.isEmpty()) {
                 folders.add(new WishlistFolder(folderName));
