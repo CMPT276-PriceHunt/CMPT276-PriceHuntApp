@@ -33,10 +33,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e714630-b038-4df2-ae1f-160b12c5dcc3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_delete.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cmpt276_pricehuntapp/Adapter/WishlistFolderAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cmpt276_pricehuntapp/Adapter/WishlistFolderAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cmpt276_pricehuntapp/WishlistActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cmpt276_pricehuntapp/WishlistActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_wishlist_folder.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_wishlist_folder.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
