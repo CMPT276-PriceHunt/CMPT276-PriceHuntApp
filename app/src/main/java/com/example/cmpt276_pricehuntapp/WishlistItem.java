@@ -5,22 +5,26 @@ import android.os.Parcelable;
 
 public class WishlistItem implements Parcelable {
     private String imagePath;
-    private String description;
+    private String name;
+    private double price;
 
-    public WishlistItem(String imagePath, String description) {
+    public WishlistItem(String imagePath, String name, double price) {
         this.imagePath = imagePath;
-        this.description = description;
+        this.name = name;
+        this.price = price;
     }
 
     protected WishlistItem(Parcel in) {
         imagePath = in.readString();
-        description = in.readString();
+        name = in.readString();
+        price = in.readDouble();
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(imagePath);
-        dest.writeString(description);
+        dest.writeString(name);
+        dest.writeDouble(price);
     }
 
     @Override
@@ -40,11 +44,7 @@ public class WishlistItem implements Parcelable {
         }
     };
 
-    public String getImagePath() {
-        return imagePath;
-    }
-
-    public String getDescription() {
-        return description;
-    }
+    public String getImagePath() { return imagePath; }
+    public String getName() { return name; }
+    public double getPrice() { return price; }
 }

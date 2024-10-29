@@ -9,15 +9,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.cmpt276_pricehuntapp.R;
 import com.example.cmpt276_pricehuntapp.WishlistItem;
-
 import java.util.ArrayList;
+import java.util.Locale;
 
-//WishlistAdapter.java
 public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.WishlistViewHolder> {
-
     private ArrayList<WishlistItem> itemList;
 
     public WishlistAdapter(ArrayList<WishlistItem> itemList) {
@@ -36,7 +33,8 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.Wishli
         WishlistItem item = itemList.get(position);
         Bitmap bitmap = BitmapFactory.decodeFile(item.getImagePath());
         holder.imgPhoto.setImageBitmap(bitmap);
-        holder.tvDescription.setText(item.getDescription());
+        holder.tvName.setText(item.getName());
+        holder.tvPrice.setText(String.format(Locale.getDefault(), "¥%.2f", item.getPrice()));
     }
 
     @Override
@@ -46,12 +44,13 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.Wishli
 
     static class WishlistViewHolder extends RecyclerView.ViewHolder {
         ImageView imgPhoto;
-        TextView tvDescription;
+        TextView tvName, tvPrice;
 
         public WishlistViewHolder(@NonNull View itemView) {
             super(itemView);
             imgPhoto = itemView.findViewById(R.id.img_photo);
-            tvDescription = itemView.findViewById(R.id.tv_description);
+            tvName = itemView.findViewById(R.id.tv_name);
+            tvPrice = itemView.findViewById(R.id.tv_price);
         }
     }
 }
