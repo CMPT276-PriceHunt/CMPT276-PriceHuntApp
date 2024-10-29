@@ -57,19 +57,19 @@ public class WishlistActivity extends AppCompatActivity {
             folders = gson.fromJson(foldersJson, type);
         } else {
             folders = new ArrayList<>();
-            folders.add(new WishlistFolder("默认收藏夹"));
+            folders.add(new WishlistFolder("Default Wishlist"));
             saveFolders();
         }
     }
 
     private void showAddFolderDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("新建收藏夹");
+        builder.setTitle("New Wishlist");
 
         final EditText input = new EditText(this);
         builder.setView(input);
 
-        builder.setPositiveButton("确定", (dialog, which) -> {
+        builder.setPositiveButton("Confirm", (dialog, which) -> {
             String folderName = input.getText().toString();
             if (!folderName.isEmpty()) {
                 folders.add(new WishlistFolder(folderName));
@@ -77,7 +77,7 @@ public class WishlistActivity extends AppCompatActivity {
                 saveFolders();
             }
         });
-        builder.setNegativeButton("取消", (dialog, which) -> dialog.cancel());
+        builder.setNegativeButton("Cancel", (dialog, which) -> dialog.cancel());
 
         builder.show();
     }

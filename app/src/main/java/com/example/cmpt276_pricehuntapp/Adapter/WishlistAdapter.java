@@ -34,7 +34,7 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.Wishli
         Bitmap bitmap = BitmapFactory.decodeFile(item.getImagePath());
         holder.imgPhoto.setImageBitmap(bitmap);
         holder.tvName.setText(item.getName());
-        holder.tvPrice.setText(String.format(Locale.getDefault(), "¥%.2f", item.getPrice()));
+        holder.tvPrice.setText(String.format(Locale.getDefault(), "$%.2f", item.getPrice()));
     }
 
     @Override
