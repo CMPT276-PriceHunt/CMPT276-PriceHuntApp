@@ -12,6 +12,19 @@
         android:layout_gravity="center_horizontal"
         android:visibility="gone" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Folder:"
+        android:layout_marginTop="16dp"/>
+
+    <Spinner
+        android:id="@+id/spinner_folders"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:minHeight="48dp"/>
+
     <EditText
         android:id="@+id/et_name"
         android:layout_width="match_parent"
@@ -47,4 +60,5 @@
         android:layout_height="wrap_content"
         android:text="View Wishlists"
         android:layout_marginTop="16dp" />
+
 </LinearLayout>
