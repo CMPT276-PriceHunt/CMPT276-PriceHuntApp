@@ -47,7 +47,7 @@ class ProfileActivity : AppCompatActivity() {
             phoneNumber.setText(" ")
             Toast.makeText(this, "Changes have been saved!", Toast.LENGTH_SHORT).show()
 
-            val intent = Intent(this, SecondActivity::class.java)
+            val intent = Intent(this, BaseActivity::class.java)
             startActivity(intent)
         }
     }
