@@ -27,6 +27,12 @@
         <activity
             android:name=".ProfileActivity"
             android:exported="false" />
+       <activity
+           android:name=".MainActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".Dashboard"
+            android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="true">

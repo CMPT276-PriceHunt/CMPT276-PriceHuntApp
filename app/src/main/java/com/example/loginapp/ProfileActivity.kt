@@ -7,6 +7,10 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationBarView
+
+//import kotlinx.android.synthetic.main.activity_main.*
 
 
 class ProfileActivity : AppCompatActivity() {
