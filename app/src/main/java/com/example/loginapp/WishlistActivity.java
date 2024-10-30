@@ -25,7 +25,7 @@ public class WishlistActivity extends AppCompatActivity {
 
     private RecyclerView rvFolders;
     private FloatingActionButton fabAddFolder;
-    private Button btnBackToHome; // 新增
+    private Button btnBackToHome;
     private ArrayList<WishlistFolder> folders;
     private WishlistFolderAdapter folderAdapter;
     private SharedPreferences prefs;
