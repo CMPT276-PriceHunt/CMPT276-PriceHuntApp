@@ -17,7 +17,6 @@
         android:layout_margin="16dp"
         android:src="@drawable/ic_add" />
 
-    <!-- 添加返回主页的按钮 -->
     <Button
         android:id="@+id/btn_back_to_home"
         android:layout_width="wrap_content"
