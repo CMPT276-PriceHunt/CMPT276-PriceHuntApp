@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- changed to RelativeLayout to have presets for positions, making the icon the parent -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background"
+    android:padding="16dp"
+    tools:context=".SecondActivity">
+    <!-- background made in login_background.xml, gravity to center so that everything
+     goes the middle of the screen, -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text="Don't Have an Account?"/>
+
+
+        <TextView
+            android:id="@+id/signUpLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign Up Now"
+            android:textColor="@color/purple_200"
+            android:textSize="18dp"
+            android:layout_marginLeft="15dp"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+    <!-- this makes a box for where our content will go into, the width should match the
+        whole entire background, and height will be exactly the height of what goes in the box -->
+
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:src="@drawable/icon_account_circle" />
+        <!-- I am making the icon, this icon is a preset in Android Studio -->
+
+        <EditText
+            android:layout_width="345dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:hint="Username"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:background="@drawable/rounded_corner_white"
+            android:padding="16dp"
+            android:inputType="text"
+            android:id="@+id/username_input"/>
+        <!-- making the textbox that users input into, box is made in rounded_corner.xml -->
+
+        <EditText
+            android:layout_width="345dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="Password"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:background="@drawable/rounded_corner_white"
+            android:padding="16dp"
+            android:inputType="textPassword"
+            android:id="@+id/password_input"/>
+        <!-- using the same code block as username, but changed to password instead -->
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textColor="@color/white"
+            android:theme="@style/ColoredButton"
+            android:textSize="20sp"
+            android:padding="18dp"
+            android:layout_marginTop="24sp"
+            android:background="@drawable/button_background"
+            android:id="@+id/login_btn"/>
+        <!-- making the button -->
+
+    </LinearLayout>
+
+</RelativeLayout>
