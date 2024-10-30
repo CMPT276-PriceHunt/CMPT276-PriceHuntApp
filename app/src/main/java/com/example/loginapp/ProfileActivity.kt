@@ -4,12 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationBarView
+
 //import kotlinx.android.synthetic.main.activity_main.*
 
 class ProfileActivity : AppCompatActivity() {
@@ -47,8 +47,35 @@ class ProfileActivity : AppCompatActivity() {
             phoneNumber.setText(" ")
             Toast.makeText(this, "Changes have been saved!", Toast.LENGTH_SHORT).show()
 
-            val intent = Intent(this, BaseActivity::class.java)
+            val intent = Intent(this, MainActivity2::class.java)
             startActivity(intent)
         }
+
+
+        // Initialize and assign variable
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+
+        // Set Home selected
+        bottomNavigationView.selectedItemId = R.id.home
+
+        // Perform item selected listener
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.wishlist -> {
+                    startActivity(Intent(applicationContext, SecondActivity::class.java))
+                    overridePendingTransition(0, 0)
+                    true
+                }
+                R.id.home -> {
+                    startActivity(Intent(applicationContext, MainActivity2::class.java))
+                    overridePendingTransition(0, 0)
+                    true
+                }
+                R.id.profile -> true
+                else -> false
+            }
+        }
     }
+
+
 }
