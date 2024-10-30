@@ -41,7 +41,7 @@ public class WishlistActivity extends AppCompatActivity {
         rvItems.setAdapter(wishlistAdapter);
 
         home_btn.setOnClickListener(v -> {
-            Intent intent = new Intent(WishlistActivity.this, HomeActivity.class);
+            Intent intent = new Intent(WishlistActivity.this, MainActivity2.class);
             startActivity(intent);
         });
     }

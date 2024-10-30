@@ -44,8 +44,35 @@ class ProfileActivity : AppCompatActivity() {
             phoneNumber.setText(" ")
             Toast.makeText(this, "Changes have been saved!", Toast.LENGTH_SHORT).show()
 
-            val intent = Intent(this, SecondActivity::class.java)
+            val intent = Intent(this, MainActivity2::class.java)
             startActivity(intent)
         }
+
+
+        // Initialize and assign variable
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+
+        // Set Home selected
+        bottomNavigationView.selectedItemId = R.id.home
+
+        // Perform item selected listener
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.wishlist -> {
+                    startActivity(Intent(applicationContext, SecondActivity::class.java))
+                    overridePendingTransition(0, 0)
+                    true
+                }
+                R.id.home -> {
+                    startActivity(Intent(applicationContext, MainActivity2::class.java))
+                    overridePendingTransition(0, 0)
+                    true
+                }
+                R.id.profile -> true
+                else -> false
+            }
+        }
     }
+
+
 }
