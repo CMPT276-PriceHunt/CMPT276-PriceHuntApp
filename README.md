@@ -88,9 +88,7 @@
 - All of your details should now show in the middle of the screen.
 
 </details>
-<details>
-  <summary>Directory Layout</summary>
-  
+
 <details>
   <summary>Directory Layout</summary>
   
