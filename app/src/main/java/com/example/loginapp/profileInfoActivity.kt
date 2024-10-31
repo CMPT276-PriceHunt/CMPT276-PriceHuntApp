@@ -30,6 +30,7 @@ class profileInfoActivity : AppCompatActivity() {
         val postcode = sharedPref.getString("Postal Code", "")
         val email = sharedPref.getString("Email Address", "")
         val phonenum = sharedPref.getString("Phone Number", "")
+        //All the info shown in textview box
         resultTextView.text = "First Name : $fname \nLast Name : $lname \nStreet Address : $strAdr \nCity : $city \nProvince : $prov \nPostal Code : $postcode \nEmail Address : $email \nPhone Number : $phonenum"
 
         buttonEdit.setOnClickListener{

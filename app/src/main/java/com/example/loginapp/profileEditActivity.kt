@@ -37,7 +37,7 @@ class profileEditActivity : AppCompatActivity() {
         buttonBack = findViewById(R.id.btnBack)
 
         buttonSave.setOnClickListener {
-            val sharedPref = getSharedPreferences("Profile Data", MODE_PRIVATE)
+            val sharedPref = getSharedPreferences("Profile Data", MODE_PRIVATE) //database initialization
 
             val firstName = editTextFirstName.text.toString()
             val lastName = editTextLastName.text.toString()
@@ -48,7 +48,7 @@ class profileEditActivity : AppCompatActivity() {
             val email = editTextEmailAddress.text.toString()
             val phoneNum = editTextPhoneNumber.text.toString()
 
-            val editor = sharedPref.edit()
+            val editor = sharedPref.edit() //variable to manipulate data from the database
             editor.putString("First Name", firstName)
             editor.putString("Last Name", lastName)
             editor.putString("City", city)
