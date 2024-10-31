@@ -37,7 +37,7 @@ public class MainActivity2 extends AppCompatActivity {
                     overridePendingTransition(0, 0);
                     return true;
                 } else if(item.getItemId() == R.id.profile) {
-                    startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                    startActivity(new Intent(getApplicationContext(), profileInfoActivity.class));
                     overridePendingTransition(0, 0);
                     return true;
                 } else if(item.getItemId() == R.id.home) {

@@ -22,9 +22,6 @@
             android:name=".WishlistActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
-            android:exported="false" />
-        <activity
             android:name=".profileEditActivity"
             android:exported="false" />
         <activity
@@ -32,9 +29,6 @@
             android:exported="false" />
        <activity
            android:name=".MainActivity2"
-            android:exported="false" />
-        <activity
-            android:name=".Dashboard"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
