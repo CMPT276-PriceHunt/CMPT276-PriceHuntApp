@@ -41,7 +41,7 @@ class LoginActivity : AppCompatActivity() {
             // these functions check if the username and password are correct
             val sharedPref = getSharedPreferences("Login Data", MODE_PRIVATE)
             val user = sharedPref.getString("Username", "admin")
-            val pass = sharedPref.getString("Password", "lambda123")
+            val pass = sharedPref.getString("Password", "admin")
 
             if (username != user || password != pass) {
                 Toast.makeText(this, "Username or Password Incorrect", Toast.LENGTH_SHORT).show()
@@ -50,7 +50,7 @@ class LoginActivity : AppCompatActivity() {
             else {
                 Toast.makeText(this, "Login Successful!", Toast.LENGTH_LONG).show()
 
-                val intent = Intent(this, MainActivity2::class.java)
+                val intent = Intent(this, HomeActivity::class.java)
                 startActivity(intent)
             }
         }
