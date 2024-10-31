@@ -41,7 +41,7 @@ class profileInfoActivity : AppCompatActivity() {
         // Initialize and assign variable
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
-        // Set Home selected
+        // Set profile selected
         bottomNavigationView.selectedItemId = R.id.profile
 
         // Perform item selected listener

@@ -107,7 +107,7 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        // Set Home selected
+        // Set Wishlist selected
         bottomNavigationView.setSelectedItemId(R.id.wishlist);
 
         // Perform item selected listener
