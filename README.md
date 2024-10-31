@@ -19,22 +19,41 @@
 ### Things that went well:
 - One issue we faced was having our navigation bar sectioned off from the rest of the pages, in this iteration it is now properly linked and leads to the correct pages
 - There is now a feature to have multiple wishlists
-- There is a way to edit your personal information
-- Signing up and using the username and password is now required to enter the app
+- Added a button to go back after viewing wishlists.
+- Can now enter the description of the item, and its price to the wishlist.
+- Cannot submit to wishlist unless all fields are filled.
+- Can delete created wishlists.
+- There is a way to edit your personal information and save it.
+- Added page to view user's personal information.
+- Added signup page.
+- Users can not log in without first signing up.
 
 ### Things that did not go well:
 - The navigation bar now uses activities instead of fragments but that took a while to solve
 - Not enough time to work on this project during midterm season, so we were not able to implement as many features as we want
+- Utilizing git better, as we have many branches that have different commit histories, making it messy and harder to work with.
 
 
 ### Things to improve on:
 - Including a consistent UI language
 - Having pre-existing clothing items that can be added to the wishlists
 - Have the image buttons on the home page actually lead to a page of those items
-- 
+- The page for viewing information is not fully finalized yet, as the layout still needs work.
+- Need to add restrictions when it comes to signing up and editing personal information.
+- Need to add button for clearing profile information.
 
 </details>
 <details>
+
+<details>
+  <Summary>Test Cases</Summary>
+  
+# Test Cases:
+- Allows users to enter "" into username and password, which they can use to log in.
+- Sometimes have to double-click on an icon in the navigation bar. Not too sure about the reason why yet.
+- No restriction on editing personal information, so users can enter "" into all the fields, and it'll save. (This is the only current way to clear all saved information.)
+
+</details>
   <summary>Running Instruction</summary>
   
 # Running Instruction:
