@@ -20,6 +20,7 @@ import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;
 
+// Adapter for managing and displaying wishlist folders in a RecyclerView
 public class WishlistFolderAdapter extends RecyclerView.Adapter<WishlistFolderAdapter.FolderViewHolder> {
     private ArrayList<WishlistFolder> folders;
     private Context context;
@@ -36,18 +37,22 @@ public class WishlistFolderAdapter extends RecyclerView.Adapter<WishlistFolderAd
         return new FolderViewHolder(view);
     }
 
+    // Bind data and set up interactions for each folder
     @Override
     public void onBindViewHolder(@NonNull FolderViewHolder holder, int position) {
         WishlistFolder folder = folders.get(position);
         holder.tvFolderName.setText(folder.getName());
 
+        // Set up nested RecyclerView for wishlist items
         WishlistAdapter itemAdapter = new WishlistAdapter(folder.getItems());
         holder.rvItems.setLayoutManager(new LinearLayoutManager(holder.itemView.getContext()));
         holder.rvItems.setAdapter(itemAdapter);
 
+        // Handle folder expansion state
         holder.rvItems.setVisibility(folder.isExpanded() ? View.VISIBLE : View.GONE);
         holder.btnExpand.setRotation(folder.isExpanded() ? 180 : 0);
 
+        // Set up click listeners for folder actions
         holder.btnExpand.setOnClickListener(v -> {
             folder.setExpanded(!folder.isExpanded());
             notifyItemChanged(position);
@@ -68,9 +73,11 @@ public class WishlistFolderAdapter extends RecyclerView.Adapter<WishlistFolderAd
         return folders.size();
     }
 
+    // Show confirmation dialog for folder deletion
     private void showDeleteConfirmationDialog(int position) {
         WishlistFolder folderToDelete = folders.get(position);
 
+        // Prevent deletion of default wishlist
         if ("Default Wishlist".equals(folderToDelete.getName())) {
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
             builder.setTitle("Cannot Delete");
@@ -96,9 +103,11 @@ public class WishlistFolderAdapter extends RecyclerView.Adapter<WishlistFolderAd
         builder.show();
     }
 
+    // Show dialog for renaming a folder
     private void showRenameFolderDialog(int position) {
         WishlistFolder folderToRename = folders.get(position);
 
+        // Prevent renaming of default wishlist
         if ("Default Wishlist".equals(folderToRename.getName())) {
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
             builder.setTitle("Cannot Rename");
@@ -118,6 +127,7 @@ public class WishlistFolderAdapter extends RecyclerView.Adapter<WishlistFolderAd
         builder.setPositiveButton("Confirm", (dialog, which) -> {
             String newName = input.getText().toString().trim();
             if (!newName.isEmpty()) {
+                // Check if name already exists
                 boolean nameExists = false;
                 for (WishlistFolder folder : folders) {
                     if (folder.getName().equals(newName)) {
@@ -143,6 +153,7 @@ public class WishlistFolderAdapter extends RecyclerView.Adapter<WishlistFolderAd
         builder.show();
     }
 
+    // ViewHolder for caching folder view references
     static class FolderViewHolder extends RecyclerView.ViewHolder {
         TextView tvFolderName;
         ImageButton btnExpand, btnDelete;
@@ -157,4 +168,3 @@ public class WishlistFolderAdapter extends RecyclerView.Adapter<WishlistFolderAd
         }
     }
 }
-

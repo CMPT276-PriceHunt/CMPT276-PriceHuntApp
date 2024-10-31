@@ -23,11 +23,14 @@ public class WishlistActivity extends AppCompatActivity {
     private static final String PREFS_NAME = "WishlistPrefs";
     private static final String FOLDERS_KEY = "folders";
 
+    // UI Components
     private RecyclerView rvFolders;
     private FloatingActionButton fabAddFolder;
     private Button btnBackToHome;
+    // Data and Adapter
     private ArrayList<WishlistFolder> folders;
     private WishlistFolderAdapter folderAdapter;
+    // Storage utilities
     private SharedPreferences prefs;
     private Gson gson;
 
@@ -36,6 +39,7 @@ public class WishlistActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wishlist);
 
+        // Initialize SharedPreferences and Gson for data persistence
         prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         gson = new Gson();
 
@@ -64,6 +68,7 @@ public class WishlistActivity extends AppCompatActivity {
         Type type = new TypeToken<ArrayList<WishlistFolder>>(){}.getType();
 
         if (foldersJson != null) {
+            // Load existing folders from SharedPreferences
             folders = gson.fromJson(foldersJson, type);
         } else {
             folders = new ArrayList<>();
@@ -79,6 +84,7 @@ public class WishlistActivity extends AppCompatActivity {
         final EditText input = new EditText(this);
         builder.setView(input);
 
+        // Set up dialog buttons
         builder.setPositiveButton("Confirm", (dialog, which) -> {
             String folderName = input.getText().toString();
             if (!folderName.isEmpty()) {

@@ -14,13 +14,16 @@ import com.example.loginapp.WishlistItem;
 import java.util.ArrayList;
 import java.util.Locale;
 
+// Adapter for displaying wishlist items in a RecyclerView
 public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.WishlistViewHolder> {
     private ArrayList<WishlistItem> itemList;
 
+    // Initialize adapter with list of wishlist items
     public WishlistAdapter(ArrayList<WishlistItem> itemList) {
         this.itemList = itemList;
     }
 
+    // Create new views for items
     @NonNull
     @Override
     public WishlistViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -28,11 +31,14 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.Wishli
         return new WishlistViewHolder(view);
     }
 
+    // Bind data to views for each item position
     @Override
     public void onBindViewHolder(@NonNull WishlistViewHolder holder, int position) {
         WishlistItem item = itemList.get(position);
+        // Load and display item image
         Bitmap bitmap = BitmapFactory.decodeFile(item.getImagePath());
         holder.imgPhoto.setImageBitmap(bitmap);
+        // Set item details
         holder.tvName.setText(item.getName());
         holder.tvPrice.setText(String.format(Locale.getDefault(), "$%.2f", item.getPrice()));
     }
@@ -42,12 +48,14 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.Wishli
         return itemList.size();
     }
 
+    // ViewHolder class for caching item view references
     static class WishlistViewHolder extends RecyclerView.ViewHolder {
         ImageView imgPhoto;
         TextView tvName, tvPrice;
 
         public WishlistViewHolder(@NonNull View itemView) {
             super(itemView);
+            // Bind UI elements
             imgPhoto = itemView.findViewById(R.id.img_photo);
             tvName = itemView.findViewById(R.id.tv_name);
             tvPrice = itemView.findViewById(R.id.tv_price);
