@@ -49,11 +49,14 @@ class profileInfoActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.wishlist -> {
                     startActivity(Intent(applicationContext, SecondActivity::class.java))
+                    // Deprecated function to remove transition but it works for now, a fix would be to comment it out but it will show a transition
+                    // Comes from converting java code to kotlin
                     overridePendingTransition(0, 0)
                     true
                 }
                 R.id.home -> {
                     startActivity(Intent(applicationContext, MainActivity2::class.java))
+                    // Deprecated function to remove transition but it works for now, a fix would be to comment it out but it will show a transition
                     overridePendingTransition(0, 0)
                     true
                 }
