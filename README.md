@@ -11,11 +11,13 @@
 
 </details>
 
-
+<details>
+  <summary>Retrospective</summary>
+  
 # Retrospective:
 
 ### Things that went well:
-- The navigation bar now links to the correct pages
+- One issue we faced was having our navigation bar sectioned off from the rest of the pages, in this iteration it is now properly linked and leads to the correct pages
 - There is now a feature to have multiple wishlists
 - There is a way to edit your personal information
 - Signing up and using the username and password is now required to enter the app
@@ -31,7 +33,16 @@
 - Have the image buttons on the home page actually lead to a page of those items
 - 
 
+</details>
+<details>
+  <summary>Test Cases</summary>
+  
 # Test Cases:
 
+</details>
+<details>
+  <summary>Directory Layout</summary>
+  
 # Directory Layout:
 
+</details>
