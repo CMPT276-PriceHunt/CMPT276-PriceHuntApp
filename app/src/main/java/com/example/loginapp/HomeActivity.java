@@ -6,12 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 
-import com.example.loginapp.profileInfoActivity;
 import com.example.loginapp.SecondActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.example.loginapp.R;
 import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity2 extends AppCompatActivity {
@@ -19,7 +16,7 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_home_activity);
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
