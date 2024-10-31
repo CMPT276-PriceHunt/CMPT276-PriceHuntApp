@@ -16,10 +16,10 @@
             android:name=".signUpActivity"
             android:exported="false"/>
         <activity
-            android:name=".SecondActivity"
+            android:name=".HomeWishlist"
             android:exported="false" />
         <activity
-            android:name=".WishlistActivity"
+            android:name=".ViewWishlistActivity"
             android:exported="false" />
         <activity
             android:name=".profileEditActivity"
@@ -28,7 +28,7 @@
             android:name=".profileInfoActivity"
             android:exported="false" />
        <activity
-           android:name=".MainActivity2"
+           android:name=".HomeActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"

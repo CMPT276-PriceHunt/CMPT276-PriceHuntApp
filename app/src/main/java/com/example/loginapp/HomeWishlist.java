@@ -32,7 +32,7 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class SecondActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class HomeWishlist extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private static final int PICK_IMAGE = 100;
     private static final String PREFS_NAME = "WishlistPrefs";
     private static final String FOLDERS_KEY = "folders";
@@ -52,7 +52,7 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
+        setContentView(R.layout.activity_home_wishlist);
 
         prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         gson = new Gson();
@@ -68,7 +68,7 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
 
         btnSubmit.setOnClickListener(v -> {
             if (folders.isEmpty()) {
-                Toast.makeText(SecondActivity.this, "No folder available", Toast.LENGTH_SHORT).show();
+                Toast.makeText(HomeWishlist.this, "No folder available", Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -89,18 +89,18 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
                     folders.set(selectedFolderPosition, currentFolder);
 
                     saveFolders();
-                    Toast.makeText(SecondActivity.this, "Item added to " + currentFolder.getName(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(HomeWishlist.this, "Item added to " + currentFolder.getName(), Toast.LENGTH_SHORT).show();
                     clearInputs();
                 } catch (NumberFormatException e) {
-                    Toast.makeText(SecondActivity.this, "Please enter a valid price", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(HomeWishlist.this, "Please enter a valid price", Toast.LENGTH_SHORT).show();
                 }
             } else {
-                Toast.makeText(SecondActivity.this, "Please fill in all fields and add a photo", Toast.LENGTH_SHORT).show();
+                Toast.makeText(HomeWishlist.this, "Please fill in all fields and add a photo", Toast.LENGTH_SHORT).show();
             }
         });
 
         btnViewWishlist.setOnClickListener(v -> {
-            Intent intent = new Intent(SecondActivity.this, WishlistActivity.class);
+            Intent intent = new Intent(HomeWishlist.this, ViewWishlistActivity.class);
             startActivity(intent);
         });
 
@@ -116,7 +116,7 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 if(item.getItemId() == R.id.home) {
-                    startActivity(new Intent(getApplicationContext(), MainActivity2.class));
+                    startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                     overridePendingTransition(0, 0);
                     return true;
                 } else if(item.getItemId() == R.id.wishlist) {

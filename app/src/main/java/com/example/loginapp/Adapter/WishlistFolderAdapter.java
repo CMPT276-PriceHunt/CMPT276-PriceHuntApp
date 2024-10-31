@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.loginapp.R;
-import com.example.loginapp.WishlistActivity;
+import com.example.loginapp.ViewWishlistActivity;
 import com.example.loginapp.WishlistFolder;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -95,8 +95,8 @@ public class WishlistFolderAdapter extends RecyclerView.Adapter<WishlistFolderAd
             notifyItemRemoved(position);
             notifyItemRangeChanged(position, folders.size());
 
-            if (context instanceof WishlistActivity) {
-                ((WishlistActivity) context).saveFolders();
+            if (context instanceof ViewWishlistActivity) {
+                ((ViewWishlistActivity) context).saveFolders();
             }
         });
         builder.setNegativeButton("Cancel", null);
@@ -141,8 +141,8 @@ public class WishlistFolderAdapter extends RecyclerView.Adapter<WishlistFolderAd
                     folderToRename.setName(newName);
                     notifyItemChanged(position);
 
-                    if (context instanceof WishlistActivity) {
-                        ((WishlistActivity) context).saveFolders();
+                    if (context instanceof ViewWishlistActivity) {
+                        ((ViewWishlistActivity) context).saveFolders();
                     }
                 }
             } else {

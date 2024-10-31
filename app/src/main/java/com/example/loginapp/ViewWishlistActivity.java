@@ -19,7 +19,7 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
-public class WishlistActivity extends AppCompatActivity {
+public class ViewWishlistActivity extends AppCompatActivity {
     private static final String PREFS_NAME = "WishlistPrefs";
     private static final String FOLDERS_KEY = "folders";
 
@@ -37,7 +37,7 @@ public class WishlistActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wishlist);
+        setContentView(R.layout.activity_view_wishlist);
 
         // Initialize SharedPreferences and Gson for data persistence
         prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
@@ -57,7 +57,7 @@ public class WishlistActivity extends AppCompatActivity {
 
 
         btnBackToHome.setOnClickListener(v -> {
-            Intent intent = new Intent(WishlistActivity.this, SecondActivity.class);
+            Intent intent = new Intent(ViewWishlistActivity.this, HomeWishlist.class);
             startActivity(intent);
             finish();
         });
