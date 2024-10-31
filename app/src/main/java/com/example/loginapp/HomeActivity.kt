@@ -1,18 +1,14 @@
-/*package com.example.loginapp
+package com.example.loginapp
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import com.example.loginapp.databinding.ActivityHomeBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationBarView
 
 class HomeActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityHomeBinding
+   /* private lateinit var binding: ActivityHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,5 +45,32 @@ class HomeActivity : AppCompatActivity() {
         selectBottomNavigationBarItem(actionID);
     }
 
-    fun
-}*/
+    */
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main2)
+
+        // Initialize and assign variable
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+
+        // Set Home selected
+        bottomNavigationView.selectedItemId = R.id.home
+
+        // Perform item selected listener
+        bottomNavigationView.setOnItemSelectedListener(NavigationBarView.OnItemSelectedListener { item ->
+            if (item.itemId == R.id.wishlist) {
+                startActivity(Intent(applicationContext, SecondActivity::class.java))
+                overridePendingTransition(0, 0)
+                return@OnItemSelectedListener true
+            } else if (item.itemId == R.id.profile) {
+                startActivity(Intent(applicationContext, profileInfoActivity::class.java))
+                overridePendingTransition(0, 0)
+                return@OnItemSelectedListener true
+            } else if (item.itemId == R.id.home) {
+                return@OnItemSelectedListener true
+            }
+            false
+        })
+    }
+}

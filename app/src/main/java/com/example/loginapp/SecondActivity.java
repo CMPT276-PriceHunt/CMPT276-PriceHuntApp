@@ -108,7 +108,7 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         // Set Home selected
-        bottomNavigationView.setSelectedItemId(R.id.home);
+        bottomNavigationView.setSelectedItemId(R.id.wishlist);
 
         // Perform item selected listener
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -119,11 +119,11 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
                     startActivity(new Intent(getApplicationContext(), MainActivity2.class));
                     overridePendingTransition(0, 0);
                     return true;
-                } else if(item.getItemId() == R.id.profile) {
-                    startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
-                    overridePendingTransition(0, 0);
-                    return true;
                 } else if(item.getItemId() == R.id.wishlist) {
+                    return true;
+                } else if(item.getItemId() == R.id.profile) {
+                    startActivity(new Intent(getApplicationContext(), profileInfoActivity.class));
+                    overridePendingTransition(0, 0);
                     return true;
                 }
                 return false;

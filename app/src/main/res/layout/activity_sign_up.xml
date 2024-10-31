@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/signup_background"
     android:padding="16dp"
-    tools:context=".SecondActivity">
+    tools:context=".signUpActivity">
     <!-- background made in login_background.xml, gravity to center so that everything
      goes the middle of the screen, -->
 

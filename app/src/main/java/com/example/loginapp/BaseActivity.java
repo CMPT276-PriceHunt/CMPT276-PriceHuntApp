@@ -38,11 +38,11 @@ public abstract class BaseActivity extends AppCompatActivity implements BottomNa
         navigationView.postDelayed(() -> {
             int itemId = item.getItemId();
             if (itemId == R.id.navigation_home) {
-                startActivity(new Intent(this, ProfileActivity.class));
+                startActivity(new Intent(this, profileInfoActivity.class));
             } else if (itemId == R.id.navigation_dashboard) {
                 startActivity(new Intent(this, SecondActivity.class));
             } else if (itemId == R.id.navigation_notifications) {
-                startActivity(new Intent(this, ProfileActivity.class));
+                startActivity(new Intent(this, profileInfoActivity.class));
             }
             finish();
         }, 300);

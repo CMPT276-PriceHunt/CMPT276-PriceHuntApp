@@ -36,11 +36,25 @@ class LoginActivity : AppCompatActivity() {
         loginBtn.setOnClickListener{
             val username = usernameInput.text.toString()
             val password = passwordInput.text.toString()
-            Toast.makeText(this, "Login Successful!", Toast.LENGTH_LONG).show()
 
-            val intent = Intent(this,MainActivity2::class.java)
-            startActivity(intent)
+            // default value are admin and lambda123
+            // these functions check if the username and password are correct
+            val sharedPref = getSharedPreferences("Login Data", MODE_PRIVATE)
+            val user = sharedPref.getString("Username", "admin")
+            val pass = sharedPref.getString("Password", "lambda123")
+
+            if (username != user || password != pass) {
+                Toast.makeText(this, "Username or Password Incorrect", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            else {
+                Toast.makeText(this, "Login Successful!", Toast.LENGTH_LONG).show()
+
+                val intent = Intent(this, MainActivity2::class.java)
+                startActivity(intent)
+            }
         }
+
         signUpLink.setOnClickListener{
             val intent = Intent(this,signUpActivity::class.java)
             startActivity(intent)
