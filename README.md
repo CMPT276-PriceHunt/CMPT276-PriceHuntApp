@@ -35,7 +35,7 @@
 
 </details>
 <details>
-  <summary>Test Cases</summary>
+  <summary>Running Instruction</summary>
   
 # Running Instruction:
 - You can try logging into the app. It should not let you because you have not signed up yet.
