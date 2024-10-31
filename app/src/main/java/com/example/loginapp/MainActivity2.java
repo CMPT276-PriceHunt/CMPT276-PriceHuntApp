@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.example.loginapp.ProfileActivity;
+import com.example.loginapp.profileInfoActivity;
 import com.example.loginapp.SecondActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.example.loginapp.R;

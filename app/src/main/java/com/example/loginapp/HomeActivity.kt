@@ -64,7 +64,7 @@ class HomeActivity : AppCompatActivity() {
                 overridePendingTransition(0, 0)
                 return@OnItemSelectedListener true
             } else if (item.itemId == R.id.profile) {
-                startActivity(Intent(applicationContext, ProfileActivity::class.java))
+                startActivity(Intent(applicationContext, profileInfoActivity::class.java))
                 overridePendingTransition(0, 0)
                 return@OnItemSelectedListener true
             } else if (item.itemId == R.id.home) {

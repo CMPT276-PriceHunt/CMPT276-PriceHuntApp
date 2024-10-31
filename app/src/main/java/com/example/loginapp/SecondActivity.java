@@ -122,7 +122,7 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
                 } else if(item.getItemId() == R.id.wishlist) {
                     return true;
                 } else if(item.getItemId() == R.id.profile) {
-                    startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                    startActivity(new Intent(getApplicationContext(), profileInfoActivity.class));
                     overridePendingTransition(0, 0);
                     return true;
                 }

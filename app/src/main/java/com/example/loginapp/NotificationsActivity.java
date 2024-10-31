@@ -4,7 +4,7 @@ public class NotificationsActivity extends BaseActivity {
 
     @Override
     int getContentViewId() {
-        return R.layout.activity_profile;
+        return R.layout.activity_profileinfo;
     }
 
     @Override
