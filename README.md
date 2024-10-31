@@ -44,5 +44,17 @@
   <summary>Directory Layout</summary>
   
 # Directory Layout:
-
+    .
+    ├── idea                     # Compiled files (alternatively `dist`)
+    ├── app                      # Compiled files (alternatively `dist`)
+    │   ├── benchmarks  # Documentation files (alternatively `doc`)
+    ├── gradle                   # Source files (alternatively `lib` or `app`)
+    ├── gitignore                # Automated tests (alternatively `spec` or `tests`)
+    ├── README.md                # Tools and utilities
+    ├── build.gradle.kits
+    ├── gradle.properties
+    ├── gradlew
+    ├── gradlew.bat
+    ├── readME-old.md            # Old README
+    └── settings.gradle.kts
 </details>
