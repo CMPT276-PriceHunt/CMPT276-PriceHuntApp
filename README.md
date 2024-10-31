@@ -30,7 +30,7 @@
 
 ### Things that did not go well:
 - The navigation bar now uses activities instead of fragments but that took a while to solve
-- Navigation bar does not work as well as an activity, the layout changes on the wishlist page and it is a little laggy (animation and loading wise)
+- Navigation bar does not work as well as an activity, the layout is different on the wishlist page and it is a little laggy (animation and loading wise)
 - Not enough time to work on this project during midterm season, so we were not able to implement as many features as we want
 - Utilizing git better, as we have many branches that have different commit histories, making it messy and harder to work with.
 
