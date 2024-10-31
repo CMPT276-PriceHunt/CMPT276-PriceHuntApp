@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.loginapp.ProfileActivity;
 import com.example.loginapp.SecondActivity;
@@ -36,7 +37,7 @@ public class MainActivity2 extends AppCompatActivity {
                     overridePendingTransition(0, 0);
                     return true;
                 } else if(item.getItemId() == R.id.profile) {
-                    startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                    startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                     overridePendingTransition(0, 0);
                     return true;
                 } else if(item.getItemId() == R.id.home) {
