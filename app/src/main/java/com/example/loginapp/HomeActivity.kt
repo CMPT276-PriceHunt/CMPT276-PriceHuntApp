@@ -1,4 +1,4 @@
-package com.example.loginapp
+/*package com.example.loginapp
 
 import android.os.Bundle
 import android.util.Log
@@ -33,4 +33,21 @@ class HomeActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
-}
+
+    override fun onStart() {
+        super.onStart()
+        updateNavigationBarState()
+    }
+
+    override public fun onPause(){
+        super.onPause();
+        overridePendingTransition(0, 0);
+    }
+
+    private fun updateNavigationBarState() {
+        int actionID = getNavigationMenuItemId();
+        selectBottomNavigationBarItem(actionID);
+    }
+
+    fun
+}*/
