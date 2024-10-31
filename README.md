@@ -43,7 +43,6 @@
 - Need to add button for clearing profile information.
 
 </details>
-<details>
 
 <details>
   <Summary>Test Cases</Summary>
@@ -54,9 +53,19 @@
 - No restriction on editing personal information, so users can enter "" into all the fields, and it'll save. (This is the only current way to clear all saved information.)
 
 </details>
+
+<details>
   <summary>Running Instruction</summary>
   
 # Running Instruction:
+
+### App Installation with apk
+- Start from a new android studio window
+- On the three vertical dots near the top right, select "Profile or Debug APK"
+- Navigate and select the apk-release.apk
+- Click the run on the middle of the top of the screen to run the application :)
+
+### Upon Opening App:
 - You can try logging into the app. It should not let you because you have not signed up yet.
 - Click on the purple text "Sign Up Now" to go to the signup page.
 - Sign up by putting in a username and password. There are no current restrictions to username and password.
@@ -64,11 +73,6 @@
 - You should now be at the Home Screen. Home Screen itself does not have any functionalities.
 - At the bottom, you can click the icons on the navigation bar to go to wishlist or profile.
 
-- ### App Installation with apk
-- Start from a new android studio window
-- On the three vertical dots near the top right, select "Profile or Debug APK"
-- Navigate and select the apk-release.apk
-- Click the run on the middle of the top of the screen to run the application :)
 
 ### Wishlist:
 - Make sure that your phone emulator already has photos. Adding can be done by going to the camera in the emulator and taking a photo.
