@@ -84,3 +84,36 @@ Running Instructions:
         // Testing Navigation
         androidTestImplementation("androidx.navigation:navigation-testing:$nav_version")
 }
+
+
+
+<details>
+  <summary>Directory Layout</summary>
+  
+# Directory Layout:
+    .
+    ├── idea                                         # Tools for IDE
+    ├── app                                          # Compiled files (alternatively `dist`)
+    │   ├── src                                      # Documentation files (alternatively `doc`)
+    │   │   ├── main
+    │   │   │   ├── java
+    │   │   │   │   ├── com
+    │   │   │   │   │   ├── example
+    │   │   │   │   │   │   │   ├── loginapp        # Java and Kotlin source code
+    │   │   │   │   ├── res                         # All non-code resources (layouts, drawables)
+    ├── gradle                                      # Build automation tool
+    ├── gitignore                                    
+    ├── README.md                                   
+    ├── build.gradle.kits
+    ├── gradle.properties
+    ├── gradlew
+    ├── gradlew.bat
+    ├── readME-old.md                                # Old README
+    └── settings.gradle.kts
+</details>
+
+### App Installation with apk
+- Start from a new android studio window
+- On the three vertical dots near the top right, select "Profile or Debug APK"
+- Navigate and select the apk-release.apk
+- Click the run on the middle of the top of the screen to run the application :)
