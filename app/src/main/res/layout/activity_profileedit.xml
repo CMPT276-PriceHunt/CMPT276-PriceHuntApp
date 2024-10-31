@@ -124,7 +124,7 @@
             android:id="@+id/btnBack"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:background="@color/gray"
+            android:background="@drawable/button_background"
             android:layout_marginLeft="35dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="30dp"
@@ -136,13 +136,13 @@
             android:id="@+id/btnSave"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:background="@color/gray"
+            android:background="@drawable/button_background"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="35dp"
             android:layout_marginBottom="30dp"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="Save Data" />
+            android:text="Save" />
 
     </LinearLayout>
 
