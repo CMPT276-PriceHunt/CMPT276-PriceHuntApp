@@ -37,9 +37,31 @@
 <details>
   <summary>Test Cases</summary>
   
-# Test Cases:
-- test 
-- test
+# Running Instruction:
+- You can try logging into the app. It should not let you because you have not signed up yet.
+- Click on the purple text "Sign Up Now" to go to the signup page.
+- Sign up by putting in a username and password. There are no current restrictions to username and password.
+- After signing up, log into your account by inputting your username and password.
+- You should now be at the Home Screen. Home Screen itself does not have any functionalities.
+- At the bottom, you can click the icons on the navigation bar to go to wishlist or profile.
+
+### Wishlist:
+- Make sure that your phone emulator already has photos. Adding can be done by going to the camera in the emulator and taking a photo.
+- Now back to the app, you can create multiple wishlists now.
+- First, click on "view wishlists".
+- Click on the "+" button in the bottom right, and name your wishlist and create.
+- Click on "back" in the bottom left, and now you can switch between wishlists.
+- Enter the item's name, it's price, add a photo, and click "submit".
+- Click on "view wishlists" and click on the arrow to the right of your wishlist.
+- You should see the wishlist's items and their price.
+
+### Profile:
+- Upon opening your profile, the content should be empty.
+- Click on "Edit Profile"
+- Enter all of the details. Currently, there are no restrictions at all except for phone number.
+- After entering details click "save".
+- All of your details should now show in the middle of the screen.
+
 </details>
 <details>
   <summary>Directory Layout</summary>
