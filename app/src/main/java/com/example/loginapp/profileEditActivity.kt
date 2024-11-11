@@ -21,6 +21,7 @@ class profileEditActivity : AppCompatActivity() {
     lateinit var editTextPhoneNumber: EditText
     lateinit var buttonSave: Button
     lateinit var buttonBack: Button
+    lateinit var buttonClear: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +36,7 @@ class profileEditActivity : AppCompatActivity() {
         editTextPhoneNumber = findViewById(R.id.etPhoneNumber)
         buttonSave = findViewById(R.id.btnSave)
         buttonBack = findViewById(R.id.btnBack)
+        buttonClear = findViewById(R.id.btnClear)
 
         buttonSave.setOnClickListener {
             val sharedPref = getSharedPreferences("Profile Data", MODE_PRIVATE) //database initialization
@@ -57,6 +59,11 @@ class profileEditActivity : AppCompatActivity() {
             editor.putString("Postal Code", postalCode)
             editor.putString("Email Address", email)
             editor.putString("Phone Number", phoneNum)
+
+            if (firstName == "" || lastName == "" || city == "" || streetAdr == "" || province == "" || postalCode == "" || email == "" || phoneNum == ""){
+                Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
             editor.apply()
 
             Toast.makeText(this, "Changes have been saved!", Toast.LENGTH_SHORT).show()
@@ -67,6 +74,25 @@ class profileEditActivity : AppCompatActivity() {
         buttonBack.setOnClickListener{
             val backBtnIntent = Intent(this, profileInfoActivity::class.java)
             startActivity(backBtnIntent)
+        }
+
+        buttonClear.setOnClickListener{
+            val sharedPref = getSharedPreferences("Profile Data", MODE_PRIVATE) //database initialization
+            val editor = sharedPref.edit() //variable to manipulate data from the database
+
+            editor.putString("First Name", "")
+            editor.putString("Last Name", "")
+            editor.putString("City", "")
+            editor.putString("Street Address", "")
+            editor.putString("Province", "")
+            editor.putString("Postal Code", "")
+            editor.putString("Email Address", "")
+            editor.putString("Phone Number", "")
+            editor.apply()
+
+            Toast.makeText(this, "All fields have been cleared!", Toast.LENGTH_SHORT).show()
+            val clearBtnIntent = Intent(this, profileInfoActivity::class.java)
+            startActivity(clearBtnIntent)
         }
     }
 }

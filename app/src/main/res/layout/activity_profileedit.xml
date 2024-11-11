@@ -117,7 +117,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="200dp"
         android:orientation="horizontal">
 
         <Button
@@ -144,6 +144,22 @@
             android:gravity="center"
             android:text="Save" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginLeft="100dp"
+            android:text="Clear All" />
     </LinearLayout>
 
 </LinearLayout>
