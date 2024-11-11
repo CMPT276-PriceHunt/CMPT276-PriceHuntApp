@@ -43,7 +43,11 @@ class LoginActivity : AppCompatActivity() {
             val user = sharedPref.getString("Username", "admin")
             val pass = sharedPref.getString("Password", "admin")
 
-            if (username != user || password != pass) {
+            if (username == "" || password == ""){
+                Toast.makeText(this, "Please enter a username and password", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            else if (username != user || password != pass) {
                 Toast.makeText(this, "Username or Password Incorrect", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }

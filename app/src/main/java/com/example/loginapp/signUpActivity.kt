@@ -47,6 +47,13 @@ class signUpActivity : AppCompatActivity() {
             editor.putString("Password", password)
             editor.apply()
 
+            // cannot save nothing as username and password
+            if (username == "" || password == ""){
+                Toast.makeText(this, "Please enter a username and password", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            // this assumes that something was inputted for signup
             Toast.makeText(this, "Sign Up Successful!", Toast.LENGTH_LONG).show()
 
             val intent = Intent(this,LoginActivity::class.java)
