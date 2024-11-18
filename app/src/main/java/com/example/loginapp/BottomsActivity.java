@@ -36,12 +36,13 @@ public class BottomsActivity extends AppCompatActivity {
 
         Button btnAddToWishlist1 = findViewById(R.id.btn_add_to_wishlist1);
         Button btnAddToWishlist2 = findViewById(R.id.btn_add_to_wishlist2);
+        Button btnAddToWishlist3 = findViewById(R.id.btn_add_to_wishlist3);
         View.OnClickListener listener = v -> {
             Intent intent;
             if (v.getId() == R.id.btn_add_to_wishlist1) {
                 int imageResource = R.drawable.bottomitem1png;
                 String name = "Acne Studios - Super Baggy Fit Jeans - 2023 Acne Studios X Moomin";
-                double price = 800;
+                double price = 1126;
 
                 HomeWishlist.addItemToWishlist(BottomsActivity.this, imageResource, name, price, "testing");
 
@@ -56,6 +57,15 @@ public class BottomsActivity extends AppCompatActivity {
 
                 intent = new Intent(BottomsActivity.this, HomeWishlist.class);
                 startActivity(intent);
+            } else if (v.getId() == R.id.btn_add_to_wishlist3) {
+                int imageResource = R.drawable.bottomitem3png;
+                String name = "Wooyoungmi - Two-Tuck Wide Denim Pants";
+                double price = 690;
+
+                HomeWishlist.addItemToWishlist(BottomsActivity.this, imageResource, name, price, "testing");
+
+                intent = new Intent(BottomsActivity.this, HomeWishlist.class);
+                startActivity(intent);
             } else {
                 return;
             }
@@ -65,39 +75,6 @@ public class BottomsActivity extends AppCompatActivity {
 
         btnAddToWishlist1.setOnClickListener(listener);
         btnAddToWishlist2.setOnClickListener(listener);
-        /*btnAddToWishlist1.setOnClickListener(v -> {
-            int imageResource = R.drawable.bottomitem1png;
-            String name = "Super Baggy Fit Jeans - 2023 Acne Studios X Moomin";
-            double price = 800;
-
-            HomeWishlist.addItemToWishlist(BottomsActivity.this, imageResource, name, price);
-
-            Intent intent = new Intent(BottomsActivity.this, HomeWishlist.class);
-            startActivity(intent);
-        });*/
-        /*
-                ImageButton btnBottoms = findViewById(R.id.bottoms);
-        ImageButton btnTops = findViewById(R.id.tops);
-        ImageButton btnOuterwear = findViewById(R.id.outerwear);
-        View.OnClickListener listener = v -> {
-            Intent intent;
-            if (v.getId() == R.id.bottoms) {
-                intent = new Intent(HomeActivity.this, BottomsActivity.class);
-            } else if (v.getId() == R.id.tops) {
-                intent = new Intent(HomeActivity.this, TopsActivity.class);
-            } else if (v.getId() == R.id.outerwear) {
-                intent = new Intent(HomeActivity.this, OuterwearActivity.class);
-            } else {
-                return;
-            }
-            startActivity(intent);
-            finish();
-        };
-
-
-        btnBottoms.setOnClickListener(listener);
-        btnTops.setOnClickListener(listener);
-        btnOuterwear.setOnClickListener(listener);
-         */
+        btnAddToWishlist3.setOnClickListener(listener);
     }
 }
