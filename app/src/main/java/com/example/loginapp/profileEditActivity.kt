@@ -38,29 +38,30 @@ class profileEditActivity : AppCompatActivity() {
         buttonBack = findViewById(R.id.btnBack)
         buttonClear = findViewById(R.id.btnClear)
 
+        val sharedPref = getSharedPreferences("Profile Data", MODE_PRIVATE)
+
+        // Retrieve and set text
+        editTextFirstName.setText(sharedPref.getString("First Name", ""))
+        editTextLastName.setText(sharedPref.getString("Last Name", ""))
+        editTextStreetAddress.setText(sharedPref.getString("Street Address", ""))
+        editTextCity.setText(sharedPref.getString("City", ""))
+        editTextProvince.setText(sharedPref.getString("Province", ""))
+        editTextPostalCode.setText(sharedPref.getString("Postal Code", ""))
+        editTextEmailAddress.setText(sharedPref.getString("Email Address", ""))
+        editTextPhoneNumber.setText(sharedPref.getString("Phone Number", ""))
+
         buttonSave.setOnClickListener {
-            val sharedPref = getSharedPreferences("Profile Data", MODE_PRIVATE) //database initialization
+            val editor = sharedPref.edit()
+            editor.putString("First Name", editTextFirstName.text.toString())
+            editor.putString("Last Name", editTextLastName.text.toString())
+            editor.putString("City", editTextCity.text.toString())
+            editor.putString("Street Address", editTextStreetAddress.text.toString())
+            editor.putString("Province", editTextProvince.text.toString())
+            editor.putString("Postal Code", editTextPostalCode.text.toString())
+            editor.putString("Email Address", editTextEmailAddress.text.toString())
+            editor.putString("Phone Number", editTextPhoneNumber.text.toString())
 
-            val firstName = editTextFirstName.text.toString()
-            val lastName = editTextLastName.text.toString()
-            val city = editTextCity.text.toString()
-            val streetAdr = editTextStreetAddress.text.toString()
-            val province = editTextProvince.text.toString()
-            val postalCode = editTextPostalCode.text.toString()
-            val email = editTextEmailAddress.text.toString()
-            val phoneNum = editTextPhoneNumber.text.toString()
-
-            val editor = sharedPref.edit() //variable to manipulate data from the database
-            editor.putString("First Name", firstName)
-            editor.putString("Last Name", lastName)
-            editor.putString("City", city)
-            editor.putString("Street Address", streetAdr)
-            editor.putString("Province", province)
-            editor.putString("Postal Code", postalCode)
-            editor.putString("Email Address", email)
-            editor.putString("Phone Number", phoneNum)
-
-            if (firstName == "" || lastName == "" || city == "" || streetAdr == "" || province == "" || postalCode == "" || email == "" || phoneNum == ""){
+            if (editTextFirstName.text.isEmpty() || editTextLastName.text.isEmpty() || editTextCity.text.isEmpty() || editTextStreetAddress.text.isEmpty() || editTextProvince.text.isEmpty() || editTextPostalCode.text.isEmpty() || editTextEmailAddress.text.isEmpty() || editTextPhoneNumber.text.isEmpty()) {
                 Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
