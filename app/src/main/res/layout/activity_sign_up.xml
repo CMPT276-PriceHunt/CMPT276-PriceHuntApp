@@ -52,6 +52,7 @@
             android:background="@drawable/rounded_corner_black"
             android:padding="16dp"
             android:inputType="text"
+            android:maxLength="15"
             android:id="@+id/username_signup"/>
         <!-- making the textbox that users input into, box is made in rounded_corner.xml -->
 
@@ -66,6 +67,7 @@
             android:background="@drawable/rounded_corner_black"
             android:padding="16dp"
             android:inputType="textPassword"
+            android:maxLength="15"
             android:id="@+id/password_signup"/>
         <!-- using the same code block as username, but changed to password instead -->
 

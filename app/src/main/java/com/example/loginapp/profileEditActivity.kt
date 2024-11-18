@@ -69,7 +69,7 @@ class profileEditActivity : AppCompatActivity() {
                 Toast.makeText(this, "Please enter a valid phone number", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            else if (editTextProvince.text.length != 6){
+            else if (editTextPostalCode.text.length != 6){
                 Toast.makeText(this, "Please enter a valid postal code", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
