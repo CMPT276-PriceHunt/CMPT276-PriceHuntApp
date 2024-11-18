@@ -2,10 +2,13 @@ package com.example.loginapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -43,5 +46,27 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        ImageButton btnBottoms = findViewById(R.id.bottoms);
+        ImageButton btnTops = findViewById(R.id.tops);
+        ImageButton btnOuterwear = findViewById(R.id.outerwear);
+        View.OnClickListener listener = v -> {
+            Intent intent;
+            if (v.getId() == R.id.bottoms) {
+                intent = new Intent(HomeActivity.this, BottomsActivity.class);
+            } else if (v.getId() == R.id.tops) {
+                intent = new Intent(HomeActivity.this, TopsActivity.class);
+            } else if (v.getId() == R.id.outerwear) {
+                intent = new Intent(HomeActivity.this, OuterwearActivity.class);
+            } else {
+                return;
+            }
+            startActivity(intent);
+            finish();
+        };
+
+
+        btnBottoms.setOnClickListener(listener);
+        btnTops.setOnClickListener(listener);
+        btnOuterwear.setOnClickListener(listener);
     }
 }

@@ -6,19 +6,21 @@
     android:id="@+id/home"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity2"
     tools:ignore="ExtraText">
+
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/bottom_navigation">
 
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <ImageButton
+                android:contentDescription="@string/featuredsection"
                 android:id="@+id/featured"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -30,6 +32,7 @@
                 />
 
             <ImageView
+                android:contentDescription="@string/discover_menswear"
                 android:id="@+id/discovermenswear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -47,29 +50,34 @@
                 android:layout_marginHorizontal="10dp">
 
                 <ImageButton
+                    android:contentDescription="@string/mens_tops"
                     android:id="@+id/tops"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/topsm" />
                 <ImageButton
+                    android:contentDescription="@string/mens_bottoms"
                     android:id="@+id/bottoms"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_toEndOf="@id/tops"
                     app:srcCompat="@drawable/bottomsm" />
                 <ImageButton
+                    android:contentDescription="@string/mens_outerwear"
                     android:id="@+id/outerwear"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_toEndOf="@id/bottoms"
                     app:srcCompat="@drawable/outerwearm" />
                 <ImageButton
+                    android:contentDescription="@string/mens_footwear"
                     android:id="@+id/footwear"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_below="@id/tops"
                     app:srcCompat="@drawable/footwearm" />
                 <ImageButton
+                    android:contentDescription="@string/mens_loungewear"
                     android:id="@+id/loungewear"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -77,6 +85,7 @@
                     android:layout_toEndOf="@id/footwear"
                     app:srcCompat="@drawable/loungewearm" />
                 <ImageButton
+                    android:contentDescription="@string/mens_accessories"
                     android:id="@+id/accessories"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -85,6 +94,7 @@
                     app:srcCompat="@drawable/accessoriesm" />
             </RelativeLayout>
             <ImageView
+                android:contentDescription="@string/discover_womenswear"
                 android:id="@+id/discoverwomenswear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -102,29 +112,34 @@
                 android:layout_marginHorizontal="10dp">
 
                 <ImageButton
+                    android:contentDescription="@string/womens_tops"
                     android:id="@+id/topsw"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/topsw" />
                 <ImageButton
+                    android:contentDescription="@string/womens_bottoms"
                     android:id="@+id/bottomsw"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_toEndOf="@id/topsw"
                     app:srcCompat="@drawable/bottomsw" />
                 <ImageButton
+                    android:contentDescription="@string/womens_outerwear"
                     android:id="@+id/outerwearw"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_toEndOf="@id/bottomsw"
                     app:srcCompat="@drawable/outerwearw" />
                 <ImageButton
+                    android:contentDescription="@string/womens_footwear"
                     android:id="@+id/footwearw"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_below="@id/topsw"
                     app:srcCompat="@drawable/footwearw" />
                 <ImageButton
+                    android:contentDescription="@string/womens_bags"
                     android:id="@+id/bagsw"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -132,6 +147,7 @@
                     android:layout_toEndOf="@id/footwearw"
                     app:srcCompat="@drawable/bagsw" />
                 <ImageButton
+                    android:contentDescription="@string/womens_accessories"
                     android:id="@+id/accessoriesw"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"

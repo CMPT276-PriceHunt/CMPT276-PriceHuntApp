@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TopsActivity">
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_back_to_home"
+        android:text="@string/back"
+        android:layout_margin="16dp"
+        />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_back_to_home"
+        android:layout_marginTop="100dp"
+        android:layout_margin="16dp"
+        android:src="@drawable/topitem" />
+
+    <Button
+        android:id="@+id/btn_add_to_wishlist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="195dp"
+        android:layout_marginStart="280dp"
+        android:text="@string/add_to_wishlist"
+        android:textSize="10sp"/>
+
+</RelativeLayout>

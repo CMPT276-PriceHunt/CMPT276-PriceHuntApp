@@ -3,4 +3,21 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="featuredsection">featuredsection</string>
+    <string name="mens_tops">mens tops</string>
+    <string name="mens_bottoms">mens bottoms</string>
+    <string name="mens_outerwear">mens outerwear</string>
+    <string name="mens_footwear">mens footwear</string>
+    <string name="mens_loungewear">mens loungewear</string>
+    <string name="mens_accessories">mens accessories</string>
+    <string name="discover_womenswear">discover womenswear</string>
+    <string name="womens_tops">womens tops</string>
+    <string name="womens_bottoms">womens bottoms</string>
+    <string name="womens_outerwear">womens outerwear</string>
+    <string name="womens_footwear">womens footwear</string>
+    <string name="womens_bags">womens bags</string>
+    <string name="womens_accessories">womens accessories</string>
+    <string name="discover_menswear">discover-menswear</string>
+    <string name="add_to_wishlist">Add to Wishlist</string>
+    <string name="back">Back</string>
 </resources>

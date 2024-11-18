@@ -12,8 +12,20 @@
         android:theme="@style/Theme.LoginApp"
         tools:targetApi="31">
         <activity
+            android:name=".OuterwearActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TopsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BottomsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MensTops"
+            android:exported="false" />
+        <activity
             android:name=".signUpActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".HomeWishlist"
             android:exported="false" />
@@ -26,8 +38,8 @@
         <activity
             android:name=".profileInfoActivity"
             android:exported="false" />
-       <activity
-           android:name=".HomeActivity"
+        <activity
+            android:name=".HomeActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
