@@ -142,7 +142,7 @@ public class HomeWishlist extends AppCompatActivity implements AdapterView.OnIte
         spinnerFolders = findViewById(R.id.spinner_folders);
     }
 
-    public static void addItemToWishlist(Context context, int imageResId, String name, double price) {
+    public static void addItemToWishlist(Context context, int imageResId, String name, double price, String folderName) {
         SharedPreferences prefs = context.getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         Gson gson = new Gson();
         String foldersJson = prefs.getString(FOLDERS_KEY, null);
@@ -157,12 +157,26 @@ public class HomeWishlist extends AppCompatActivity implements AdapterView.OnIte
         }
 
         WishlistItem item = new WishlistItem(imageResId, name, price);
-        folders.get(0).addItem(item);
+        boolean folderFound = false;
+
+        for (WishlistFolder folder : folders) {
+            if (folder.getName().equals(folderName)) {
+                folder.addItem(item);
+                folderFound = true;
+                break;
+            }
+        }
+
+        if (!folderFound) {
+            WishlistFolder newFolder = new WishlistFolder(folderName);
+            newFolder.addItem(item);
+            folders.add(newFolder);
+        }
 
         String updatedFoldersJson = gson.toJson(folders);
         prefs.edit().putString(FOLDERS_KEY, updatedFoldersJson).apply();
 
-        Toast.makeText(context, "Item added to wishlist", Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, "Item added to " + folderName, Toast.LENGTH_SHORT).show();
     }
 
     private void loadFolders() {
