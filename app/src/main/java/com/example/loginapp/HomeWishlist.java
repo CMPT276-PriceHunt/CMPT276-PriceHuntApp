@@ -1,5 +1,6 @@
 package com.example.loginapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -44,7 +45,7 @@ public class HomeWishlist extends AppCompatActivity implements AdapterView.OnIte
     private ArrayAdapter<String> spinnerAdapter;
 
     private Bitmap selectedBitmap;
-    private ArrayList<WishlistFolder> folders;
+    private static ArrayList<WishlistFolder> folders;
     private int selectedFolderPosition = 0;  // Track the selected position
     private SharedPreferences prefs;
     private Gson gson;
@@ -139,6 +140,29 @@ public class HomeWishlist extends AppCompatActivity implements AdapterView.OnIte
         btnSubmit = findViewById(R.id.btn_submit);
         btnViewWishlist = findViewById(R.id.btn_view_wishlist);
         spinnerFolders = findViewById(R.id.spinner_folders);
+    }
+
+    public static void addItemToWishlist(Context context, int imageResId, String name, double price) {
+        SharedPreferences prefs = context.getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        Gson gson = new Gson();
+        String foldersJson = prefs.getString(FOLDERS_KEY, null);
+        Type type = new TypeToken<ArrayList<WishlistFolder>>(){}.getType();
+        ArrayList<WishlistFolder> folders;
+
+        if (foldersJson != null) {
+            folders = gson.fromJson(foldersJson, type);
+        } else {
+            folders = new ArrayList<>();
+            folders.add(new WishlistFolder("Default Wishlist"));
+        }
+
+        WishlistItem item = new WishlistItem(imageResId, name, price);
+        folders.get(0).addItem(item);
+
+        String updatedFoldersJson = gson.toJson(folders);
+        prefs.edit().putString(FOLDERS_KEY, updatedFoldersJson).apply();
+
+        Toast.makeText(context, "Item added to wishlist", Toast.LENGTH_SHORT).show();
     }
 
     private void loadFolders() {

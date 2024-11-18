@@ -8,10 +8,17 @@ public class WishlistItem implements Parcelable {
     private String imagePath;  // Path to item's image
     private String name;       // Name of the item
     private double price;      // Price of the item
+    private int imageResId;    // Resource ID for the item's image
 
     // Standard constructor for creating new items
     public WishlistItem(String imagePath, String name, double price) {
         this.imagePath = imagePath;
+        this.name = name;
+        this.price = price;
+    }
+
+    public WishlistItem(int imageResId, String name, double price) {
+        this.imageResId = imageResId;
         this.name = name;
         this.price = price;
     }
@@ -53,4 +60,6 @@ public class WishlistItem implements Parcelable {
     public String getImagePath() { return imagePath; }
     public String getName() { return name; }
     public double getPrice() { return price; }
+    public int getImageResId() { return imageResId; }
+
 }

@@ -27,7 +27,7 @@
             android:src="@drawable/bottomitem" />
 
         <Button
-            android:id="@+id/btn_add_to_wishlist"
+            android:id="@+id/btn_add_to_wishlist1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

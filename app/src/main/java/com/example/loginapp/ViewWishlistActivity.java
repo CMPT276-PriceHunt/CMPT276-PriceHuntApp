@@ -63,6 +63,7 @@ public class ViewWishlistActivity extends AppCompatActivity {
         });
     }
 
+
     private void loadFolders() {
         String foldersJson = prefs.getString(FOLDERS_KEY, null);
         Type type = new TypeToken<ArrayList<WishlistFolder>>(){}.getType();
