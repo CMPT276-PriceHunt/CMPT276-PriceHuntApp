@@ -43,14 +43,24 @@ public class WishlistFolderAdapter extends RecyclerView.Adapter<WishlistFolderAd
         WishlistFolder folder = folders.get(position);
         holder.tvFolderName.setText(folder.getName());
 
-        // Set up nested RecyclerView for wishlist items
-        WishlistAdapter itemAdapter = new WishlistAdapter(folder.getItems());
-        holder.rvItems.setLayoutManager(new LinearLayoutManager(holder.itemView.getContext()));
+        // Create adapter and set up RecyclerView
+        WishlistAdapter itemAdapter = new WishlistAdapter(folder.getItems(), folder);
+        holder.rvItems.setLayoutManager(new LinearLayoutManager(holder.itemView.getContext()) {
+            @Override
+            public boolean supportsPredictiveItemAnimations() {
+                return false; // Disable predictive animations to prevent issues
+            }
+        });
         holder.rvItems.setAdapter(itemAdapter);
 
-        // Handle folder expansion state
+        // Handle expansion state
         holder.rvItems.setVisibility(folder.isExpanded() ? View.VISIBLE : View.GONE);
         holder.btnExpand.setRotation(folder.isExpanded() ? 180 : 0);
+
+        holder.btnExpand.setOnClickListener(v -> {
+            folder.setExpanded(!folder.isExpanded());
+            notifyItemChanged(position);
+        });
 
         // Set up click listeners for folder actions
         holder.btnExpand.setOnClickListener(v -> {
