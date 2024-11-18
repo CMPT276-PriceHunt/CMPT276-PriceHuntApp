@@ -16,7 +16,9 @@
             android:text="@string/back"
             android:layout_margin="16dp"
             />
+
         <ImageView
+            android:id="@+id/bottom1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/btn_back_to_home"
@@ -29,7 +31,44 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="195dp"
+            android:layout_marginTop="193dp"
+            android:layout_marginStart="280dp"
+            android:text="@string/add_to_wishlist"
+            android:textSize="10sp"/>
+
+        <ImageView
+            android:id="@+id/bottom2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bottom1"
+            android:layout_marginTop="100dp"
+            android:layout_margin="16dp"
+            android:src="@drawable/bottomitem2" />
+
+        <Button
+            android:id="@+id/btn_add_to_wishlist2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="375dp"
+            android:layout_marginStart="280dp"
+            android:text="@string/add_to_wishlist"
+            android:textSize="10sp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bottom2"
+            android:layout_marginTop="100dp"
+            android:layout_margin="16dp"
+            android:src="@drawable/bottomitem3" />
+
+        <Button
+            android:id="@+id/btn_add_to_wishlist3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="558dp"
             android:layout_marginStart="280dp"
             android:text="@string/add_to_wishlist"
             android:textSize="10sp"/>
