@@ -65,6 +65,18 @@ class profileEditActivity : AppCompatActivity() {
                 Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
+            else if (editTextPhoneNumber.text.length != 10){
+                Toast.makeText(this, "Please enter a valid phone number", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            else if (editTextProvince.text.length != 6){
+                Toast.makeText(this, "Please enter a valid postal code", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            else if (editTextProvince.text.length != 2){
+                Toast.makeText(this, "Please enter a valid province", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
             editor.apply()
 
             Toast.makeText(this, "Changes have been saved!", Toast.LENGTH_SHORT).show()
