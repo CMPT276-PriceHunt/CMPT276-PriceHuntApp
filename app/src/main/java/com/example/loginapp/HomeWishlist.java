@@ -45,7 +45,7 @@ public class HomeWishlist extends AppCompatActivity implements AdapterView.OnIte
     private ArrayAdapter<String> spinnerAdapter;
 
     private Bitmap selectedBitmap;
-    private static ArrayList<WishlistFolder> folders;
+    public static ArrayList<WishlistFolder> folders;
     private int selectedFolderPosition = 0;  // Track the selected position
     private SharedPreferences prefs;
     private Gson gson;
@@ -179,7 +179,7 @@ public class HomeWishlist extends AppCompatActivity implements AdapterView.OnIte
         Toast.makeText(context, "Item added to " + folderName, Toast.LENGTH_SHORT).show();
     }
 
-    private void loadFolders() {
+    public void loadFolders() {
         String foldersJson = prefs.getString(FOLDERS_KEY, null);
         Type type = new TypeToken<ArrayList<WishlistFolder>>(){}.getType();
 
@@ -197,7 +197,7 @@ public class HomeWishlist extends AppCompatActivity implements AdapterView.OnIte
         }
     }
 
-    private void setupSpinner() {
+    public void setupSpinner() {
         ArrayList<String> folderNames = new ArrayList<>();
         for (WishlistFolder folder : folders) {
             folderNames.add(folder.getName());

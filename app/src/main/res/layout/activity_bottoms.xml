@@ -15,7 +15,10 @@
             android:id="@+id/btn_back_to_home"
             android:text="@string/back"
             android:layout_margin="16dp"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="10dp"
             />
+
 
         <ImageView
             android:id="@+id/bottom1"
@@ -27,7 +30,7 @@
             android:src="@drawable/bottomitem" />
 
         <Button
-            android:id="@+id/btn_add_to_wishlist1"
+            android:id="@+id/btn_show_dialog1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -46,7 +49,7 @@
             android:src="@drawable/bottomitem2" />
 
         <Button
-            android:id="@+id/btn_add_to_wishlist2"
+            android:id="@+id/btn_show_dialog2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -64,7 +67,7 @@
             android:src="@drawable/bottomitem3" />
 
         <Button
-            android:id="@+id/btn_add_to_wishlist3"
+            android:id="@+id/btn_show_dialog3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

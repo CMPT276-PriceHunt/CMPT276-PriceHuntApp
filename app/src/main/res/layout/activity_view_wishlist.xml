@@ -24,6 +24,8 @@
         android:text="Back"
         android:background="@drawable/button_background"
         android:layout_gravity="bottom|start"
-        android:layout_margin="16dp" />
+        android:layout_margin="16dp"
+        android:paddingHorizontal="30dp"
+        android:paddingVertical="10dp"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

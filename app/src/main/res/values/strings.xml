@@ -21,4 +21,6 @@
     <string name="add_to_wishlist">Add to Wishlist</string>
     <string name="back">Back</string>
     <string name="last_name">Last Name</string>
+    <string name="confirm">Confirm</string>
+    <string name="close">Close</string>
 </resources>
