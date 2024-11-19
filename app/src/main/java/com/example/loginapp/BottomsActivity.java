@@ -102,15 +102,15 @@ public class BottomsActivity extends AppCompatActivity {
         ImageView img = dialog.findViewById(R.id.img_photo);
         if(var == 1)
         {
-            img.setImageResource(R.drawable.bottomitem); // @drawable/bottomitem1
+            img.setImageResource(R.drawable.bottomitem);
         }
         else if(var == 2)
         {
-            img.setImageResource(R.drawable.bottomitem2); // @drawable/bottomitem2
+            img.setImageResource(R.drawable.bottomitem2);
         }
         else if(var == 3)
         {
-            img.setImageResource(R.drawable.bottomitem3); // @drawable/bottomitem3
+            img.setImageResource(R.drawable.bottomitem3);
         }
         else {
             return;
