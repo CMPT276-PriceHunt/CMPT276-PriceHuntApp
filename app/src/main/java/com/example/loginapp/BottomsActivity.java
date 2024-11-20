@@ -107,16 +107,13 @@ public class BottomsActivity extends AppCompatActivity {
         }
         Button btnConfirm = dialog.findViewById(R.id.btn_confirm);
         btnConfirm.setOnClickListener(v -> {
-            Intent intent;
             if(var == 1) {
                 int imageResource = R.drawable.bottomitem1png;
                 String name = "Acne Studios - Super Baggy Fit Jeans - 2023 Acne Studios X Moomin";
                 double price = 1126;
 
                 HomeWishlist.addItemToWishlist(BottomsActivity.this, imageResource, name, price, selectedFolderName);
-
-                intent = new Intent(BottomsActivity.this, HomeWishlist.class);
-                startActivity(intent);
+                dialog.dismiss();
             }
             else if(var == 2)
             {
@@ -125,24 +122,18 @@ public class BottomsActivity extends AppCompatActivity {
                 double price = 973;
 
                 HomeWishlist.addItemToWishlist(BottomsActivity.this, imageResource, name, price, selectedFolderName);
-
-                intent = new Intent(BottomsActivity.this, HomeWishlist.class);
-                startActivity(intent);
+                dialog.dismiss();
             }else if (var == 3) {
                 int imageResource = R.drawable.bottomitem3png;
                 String name = "Wooyoungmi - Two-Tuck Wide Denim Pants";
                 double price = 690;
 
                 HomeWishlist.addItemToWishlist(BottomsActivity.this, imageResource, name, price, selectedFolderName);
-
-                intent = new Intent(BottomsActivity.this, HomeWishlist.class);
-                startActivity(intent);
+                dialog.dismiss();
             }
             else {
                 return;
             }
-            startActivity(intent);
-            finish();
         });
 
         dialog.getWindow().setLayout(width, height);

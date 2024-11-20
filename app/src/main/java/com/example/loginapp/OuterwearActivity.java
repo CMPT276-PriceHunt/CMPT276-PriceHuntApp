@@ -80,22 +80,17 @@ public class OuterwearActivity extends AppCompatActivity {
         }
         Button btnConfirm = dialog.findViewById(R.id.btn_confirm);
         btnConfirm.setOnClickListener(v -> {
-            Intent intent;
             if(var == 1) {
                 int imageResource = R.drawable.outerwearitem1png;
                 String name = "Our Legacy - Slight Jacket";
                 double price = 875;
 
                 HomeWishlist.addItemToWishlist(OuterwearActivity.this, imageResource, name, price, selectedFolderName);
-
-                intent = new Intent(OuterwearActivity.this, HomeWishlist.class);
-                startActivity(intent);
+                dialog.dismiss();
             }
             else {
                 return;
             }
-            startActivity(intent);
-            finish();
         });
 
         dialog.getWindow().setLayout(width, height);

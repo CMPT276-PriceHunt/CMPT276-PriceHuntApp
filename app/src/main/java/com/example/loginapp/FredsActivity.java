@@ -107,10 +107,7 @@ public class FredsActivity extends AppCompatActivity {
             double price2 = 1595;
 
             HomeWishlist.addItemToWishlist(FredsActivity.this, imageResource2, name2, price2, selectedFolderName);
-            intent = new Intent(FredsActivity.this, HomeWishlist.class);
-            startActivity(intent);
-            startActivity(intent);
-            finish();
+            dialog.dismiss();
         });
 
         dialog.getWindow().setLayout(width, height);
