@@ -36,7 +36,7 @@ import java.util.UUID;
 public class HomeWishlist extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private static final int PICK_IMAGE = 100;
     private static final String PREFS_NAME = "WishlistPrefs";
-    private static final String FOLDERS_KEY = "folders";
+    public static final String FOLDERS_KEY = "folders";
 
     private ImageView imgPhoto;
     private EditText etName, etPrice;
@@ -46,8 +46,8 @@ public class HomeWishlist extends AppCompatActivity implements AdapterView.OnIte
 
     private Bitmap selectedBitmap;
     public static ArrayList<WishlistFolder> folders;
-    private int selectedFolderPosition = 0;  // Track the selected position
-    private SharedPreferences prefs;
+    public int selectedFolderPosition = 0;  // Track the selected position
+    public SharedPreferences prefs;
     private Gson gson;
 
     @Override
