@@ -24,9 +24,6 @@
             android:name=".BottomsActivity"
             android:exported="false" />
         <activity
-            android:name=".MensTops"
-            android:exported="false" />
-        <activity
             android:name=".signUpActivity"
             android:exported="false" />
         <activity
