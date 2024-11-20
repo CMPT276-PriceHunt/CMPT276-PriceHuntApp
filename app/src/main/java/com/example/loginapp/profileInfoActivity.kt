@@ -24,14 +24,14 @@ class profileInfoActivity : AppCompatActivity() {
         val sharedPref = getSharedPreferences("Profile Data", MODE_PRIVATE)
         val fname = sharedPref.getString("First Name", "")
         val lname = sharedPref.getString("Last Name", "")
-        val strAdr = sharedPref.getString("Street Address", "")
+        val address = sharedPref.getString("Street Address", "")
         val city = sharedPref.getString("City", "")
         val prov = sharedPref.getString("Province", "")
         val postcode = sharedPref.getString("Postal Code", "")
         val email = sharedPref.getString("Email Address", "")
         val phonenum = sharedPref.getString("Phone Number", "")
         //All the info shown in textview box
-        resultTextView.text = "First Name : $fname \nLast Name : $lname \nStreet Address : $strAdr \nCity : $city \nProvince : $prov \nPostal Code : $postcode \nEmail Address : $email \nPhone Number : $phonenum"
+        resultTextView.text = "First Name : $fname \nLast Name : $lname \nStreet Address : $address \nCity : $city \nProvince : $prov \nPostal Code : $postcode \nEmail Address : $email \nPhone Number : $phonenum"
 
         buttonEdit.setOnClickListener{
             val mainActIntent = Intent(this, profileEditActivity::class.java)
