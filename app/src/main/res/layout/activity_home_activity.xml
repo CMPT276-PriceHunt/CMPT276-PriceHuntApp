@@ -155,22 +155,33 @@
                     android:layout_toEndOf="@id/bagsw"
                     app:srcCompat="@drawable/accessoriesw" />
             </RelativeLayout>
+            <ImageView
+                android:contentDescription="@string/steal_their_look"
+                android:id="@+id/steal_look"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="16dp"
+                android:layout_below="@id/womenswear"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/steallook" />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/steal_look"
+                android:padding="16dp"
+                android:layout_marginHorizontal="10dp">
+            <ImageButton
+                android:id="@+id/fredbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:contentDescription=""
+                app:srcCompat="@drawable/fredbutton"/>
+            </RelativeLayout>
+
 
         </RelativeLayout>
     </ScrollView>
 
-            <!--<ImageButton
-                android:id="@+id/imageButton2"
-                android:layout_width="wrap_content"
-                android:layout_height="400dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="300dp"
-                android:adjustViewBounds="true"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/menswear" />-->
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
