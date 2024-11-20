@@ -45,7 +45,7 @@ class signUpActivity : AppCompatActivity() {
             val password = passwordSignup.text.toString()
 
             // cannot save nothing as username and password
-            if (username == "" || password == ""){
+            if (username.isEmpty() || password.isEmpty()){
                 Toast.makeText(this, "Please enter a username and password", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
