@@ -21,6 +21,7 @@ class profileInfoActivity : AppCompatActivity() {
         buttonEdit = findViewById(R.id.btnEdit)
 
         resultTextView = findViewById(R.id.tvResult)
+
         val sharedPref = getSharedPreferences("Profile Data", MODE_PRIVATE)
         val fname = sharedPref.getString("First Name", "")
         val lname = sharedPref.getString("Last Name", "")

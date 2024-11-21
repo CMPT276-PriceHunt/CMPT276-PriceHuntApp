@@ -9,6 +9,17 @@
     android:orientation="vertical"
     tools:context=".profileEditActivity">
 
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_background"
+        android:layout_gravity="start"
+        android:gravity="center"
+        android:text="Back" />
+
     <EditText
         android:id="@+id/etFirstName"
         android:layout_width="match_parent"
@@ -16,7 +27,7 @@
         android:inputType="text"
         android:hint="First Name"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:textSize="20dp"
@@ -35,62 +46,6 @@
         android:layout_marginRight="20dp"
         android:textSize="20dp"
         android:maxLength="25"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/etStreetAddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:hint="Street Address"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:textSize="20dp"
-        android:maxLength="30"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/etCity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:hint="City"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:textSize="20dp"
-        android:maxLength="20"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/etProvince"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:hint="Province"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:textSize="20dp"
-        android:maxLength="2"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/etPostalCode"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:hint="Postal Code"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:textSize="20dp"
-        android:maxLength="6"
         android:textStyle="bold" />
 
     <EditText
@@ -120,53 +75,90 @@
         android:maxLength="10"
         android:textStyle="bold" />
 
+    <EditText
+        android:id="@+id/etProvince"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="Province"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="20dp"
+        android:maxLength="2"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="City"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="20dp"
+        android:maxLength="20"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etStreetAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="Street Address"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="20dp"
+        android:maxLength="30"
+        android:textStyle="bold" />
+
+
+    <EditText
+        android:id="@+id/etPostalCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="Postal Code"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="20dp"
+        android:maxLength="6"
+        android:textStyle="bold" />
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btnBack"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_background"
-            android:layout_marginLeft="35dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="30dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="Back" />
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/btnSave"
-            android:layout_width="150dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:background="@drawable/button_background"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="35dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginTop="50dp"
             android:layout_gravity="center"
             android:gravity="center"
             android:text="Save" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
         <Button
             android:id="@+id/btnClear"
-            android:layout_width="200dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:background="@drawable/button_background"
             android:gravity="center"
             android:layout_gravity="center"
-            android:layout_marginLeft="100dp"
+            android:layout_marginTop="50dp"
             android:text="Clear All" />
+
     </LinearLayout>
+
 
 </LinearLayout>
