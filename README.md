@@ -9,7 +9,6 @@
 ![Screenshot 2024-10-30 222945](https://github.com/user-attachments/assets/8d98f3a4-6a50-410e-b0f4-72f831084be0)
 </details>
 
-</details>
 
 <details>
   <summary>Retrospective</summary>
