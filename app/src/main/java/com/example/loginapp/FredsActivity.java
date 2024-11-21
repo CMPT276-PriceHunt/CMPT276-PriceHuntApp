@@ -64,11 +64,10 @@ public class FredsActivity extends AppCompatActivity {
 
     private void displayDialog(){
         int width = (int)(getResources().getDisplayMetrics().widthPixels*0.90);
-        int height = (int)(getResources().getDisplayMetrics().heightPixels*0.7);
+        int height = (int)(getResources().getDisplayMetrics().heightPixels*0.71);
         Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.layout_adding_dialog);
         dialog.getWindow().setBackgroundDrawableResource(R.drawable.button_background);
-
 
         Spinner dialogSpinner = dialog.findViewById(R.id.spinner_folders);
         SpinnerUtils.setupDialogSpinner(this, dialogSpinner, folders, selectedFolderPosition, folderName -> selectedFolderName = folderName);
@@ -77,7 +76,6 @@ public class FredsActivity extends AppCompatActivity {
         img.setImageResource(R.drawable.fredfit);
         Button btnConfirm = dialog.findViewById(R.id.btn_confirm);
         btnConfirm.setOnClickListener(v -> {
-            Intent intent;
             int imageResource1 = R.drawable.beltpng;
             String name1 = "Hermès - Collier De Chien 50 Belt";
             double price1 = 5350;
