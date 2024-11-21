@@ -18,6 +18,8 @@
         android:background="@drawable/button_background"
         android:layout_gravity="start"
         android:gravity="center"
+        android:paddingHorizontal="30dp"
+        android:paddingVertical="10dp"
         android:text="Back" />
 
     <EditText

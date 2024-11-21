@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CarlsActivity">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_back_to_home"
+        android:text="@string/back"
+        android:layout_margin="16dp"
+        android:paddingHorizontal="30dp"
+        android:paddingVertical="10dp"
+        />
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/btn_back_to_home">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/glasses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_margin="16dp"
+        android:src="@drawable/carlglassesitem" />
+
+
+    <ImageView
+        android:id="@+id/shirt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/glasses"
+        android:layout_marginTop="100dp"
+        android:layout_margin="16dp"
+        android:src="@drawable/carlshirtitem" />
+
+    <ImageView
+        android:id="@+id/suspenders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/shirt"
+        android:layout_marginTop="100dp"
+        android:layout_margin="16dp"
+        android:src="@drawable/carlsuspendersitem" />
+    <ImageView
+        android:id="@+id/pants"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/suspenders"
+        android:layout_marginTop="100dp"
+        android:layout_margin="16dp"
+        android:src="@drawable/carlpantsitem" />
+
+    <ImageView
+        android:id="@+id/socks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pants"
+        android:layout_marginTop="100dp"
+        android:layout_margin="16dp"
+        android:src="@drawable/carlsocksitem" />
+    <ImageView
+        android:id="@+id/shoes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/socks"
+        android:layout_marginTop="100dp"
+        android:layout_margin="16dp"
+        android:src="@drawable/carlshoesitem" />
+            <Button
+                android:id="@+id/btn_show_dialog1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_below="@id/shoes"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="270dp"
+                android:paddingHorizontal="30dp"
+                android:paddingVertical="10dp"
+                android:text="@string/add_to_wishlist"
+                android:textSize="10sp"/>
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

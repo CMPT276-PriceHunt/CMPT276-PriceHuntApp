@@ -50,6 +50,7 @@ public class HomeActivity extends AppCompatActivity {
         ImageButton btnTops = findViewById(R.id.tops);
         ImageButton btnOuterwear = findViewById(R.id.outerwear);
         ImageButton btnFred = findViewById(R.id.fredbutton);
+        ImageButton btnCarl = findViewById(R.id.carlbutton);
         View.OnClickListener listener = v -> {
             Intent intent;
             if (v.getId() == R.id.bottoms) {
@@ -61,6 +62,8 @@ public class HomeActivity extends AppCompatActivity {
             }
             else if (v.getId() == R.id.fredbutton) {
                 intent = new Intent(HomeActivity.this, FredsActivity.class);
+            }else if (v.getId() == R.id.carlbutton) {
+                intent = new Intent(HomeActivity.this, CarlsActivity.class);
             }else {
                 return;
             }
@@ -73,6 +76,6 @@ public class HomeActivity extends AppCompatActivity {
         btnTops.setOnClickListener(listener);
         btnOuterwear.setOnClickListener(listener);
         btnFred.setOnClickListener(listener);
-
+        btnCarl.setOnClickListener(listener);
     }
 }

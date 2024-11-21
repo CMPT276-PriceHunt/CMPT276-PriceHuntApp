@@ -176,6 +176,13 @@
                 android:layout_height="match_parent"
                 android:contentDescription=""
                 app:srcCompat="@drawable/fredbutton"/>
+                <ImageButton
+                    android:layout_toEndOf="@id/fredbutton"
+                    android:id="@+id/carlbutton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:contentDescription=""
+                    app:srcCompat="@drawable/homecarl"/>
             </RelativeLayout>
 
 

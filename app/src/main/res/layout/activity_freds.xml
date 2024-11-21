@@ -50,5 +50,15 @@
         android:layout_margin="16dp"
         android:src="@drawable/outfitpants" />
 
+    <ImageView
+        android:id="@+id/fredboxers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bottom2"
+        android:layout_marginTop="100dp"
+        android:layout_margin="16dp"
+        android:src="@drawable/fredboxers" />
+
+
 
 </RelativeLayout>
