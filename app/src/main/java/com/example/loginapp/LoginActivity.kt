@@ -10,14 +10,20 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.loginapp.Database.LoginInfoDatabaseHelper
 
 
 class LoginActivity : AppCompatActivity() {
+    // makes it so that we can access username in profileEdit so we can make changes to db
+    companion object{
+        var username = ""
+    }
 
     private lateinit var usernameInput :EditText
     private lateinit var passwordInput : EditText
     private lateinit var loginBtn :Button
     private lateinit var signUpLink : TextView
+    private lateinit var db : LoginInfoDatabaseHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,30 +39,27 @@ class LoginActivity : AppCompatActivity() {
         passwordInput = findViewById(R.id.password_input)
         loginBtn = findViewById(R.id.login_btn)
         signUpLink = findViewById(R.id.signUpLink)
+        db = LoginInfoDatabaseHelper(this)
 
-        loginBtn.setOnClickListener{
-            val username = usernameInput.text.toString()
+        loginBtn.setOnClickListener {
+            username = usernameInput.text.toString()
             val password = passwordInput.text.toString()
 
-            // default value are admin and lambda123
-            // these functions check if the username and password are correct
-            val sharedPref = getSharedPreferences("Login Data", MODE_PRIVATE)
-            val user = sharedPref.getString("Username", "admin")
-            val pass = sharedPref.getString("Password", "admin")
-
-            if (username == "" || password == ""){
-                Toast.makeText(this, "Please enter a username and password", Toast.LENGTH_SHORT).show()
+            // checks for valid input
+            if (username.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "Please enter a username and password", Toast.LENGTH_SHORT)
+                    .show()
                 return@setOnClickListener
-            }
-            else if (username != user || password != pass) {
-                Toast.makeText(this, "Username or Password Incorrect", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-            else {
-                Toast.makeText(this, "Login Successful!", Toast.LENGTH_LONG).show()
+            } else {
+                if (db.checkLoginInfo(username, password)) {
+                    Toast.makeText(this, "Login Successful!", Toast.LENGTH_LONG).show()
 
-                val intent = Intent(this, HomeActivity::class.java)
-                startActivity(intent)
+                    val intent = Intent(this, HomeActivity::class.java)
+                    startActivity(intent)
+                } else {
+                    Toast.makeText(this, "Incorrect username or password", Toast.LENGTH_LONG).show()
+                    return@setOnClickListener
+                }
             }
         }
 

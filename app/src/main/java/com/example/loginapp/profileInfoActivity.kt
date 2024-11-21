@@ -3,12 +3,13 @@ package com.example.loginapp
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.loginapp.R
+import com.example.loginapp.Database.LoginInfoDatabaseHelper
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView
+
+import com.example.loginapp.LoginActivity.Companion.username
 
 class profileInfoActivity : AppCompatActivity() {
 
@@ -22,10 +23,14 @@ class profileInfoActivity : AppCompatActivity() {
     lateinit var postcode: TextView
     lateinit var buttonEdit: Button
 
+    lateinit var db: LoginInfoDatabaseHelper
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_profileinfo)
         buttonEdit = findViewById(R.id.btnEdit)
+        db = LoginInfoDatabaseHelper(this)
 
         firstname = findViewById<TextView>(R.id.fname)
         lastname = findViewById<TextView>(R.id.lname)
@@ -36,18 +41,17 @@ class profileInfoActivity : AppCompatActivity() {
         address = findViewById<TextView>(R.id.address)
         postcode = findViewById<TextView>(R.id.postcode)
 
+        val info = db.readUserInfo(username)
+        firstname.text = info?.fname
+        lastname.text = info?.lname
+        email.text = info?.email
+        phonenum.text = info?.phone.toString()
+        city.text = info?.city
+        prov.text = info?.prov
+        address.text = info?.address
+        postcode.text = info?.postal
 
-        val sharedPref = getSharedPreferences("Profile Data", MODE_PRIVATE)
-        val fname = sharedPref.getString("First Name", "")
-        val lname = sharedPref.getString("Last Name", "")
-        val address = sharedPref.getString("Street Address", "")
-        val city = sharedPref.getString("City", "")
-        val prov = sharedPref.getString("Province", "")
-        val postcode = sharedPref.getString("Postal Code", "")
-        val email = sharedPref.getString("Email Address", "")
-        val phonenum = sharedPref.getString("Phone Number", "")
-        //All the info shown in textview box
-        //resultTextView.text = "First Name : $fname \nLast Name : $lname \nStreet Address : $address \nCity : $city \nProvince : $prov \nPostal Code : $postcode \nEmail Address : $email \nPhone Number : $phonenum"
+
 
         buttonEdit.setOnClickListener{
             val mainActIntent = Intent(this, profileEditActivity::class.java)

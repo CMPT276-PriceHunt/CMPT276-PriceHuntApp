@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 // importing our database
 import com.example.loginapp.Database.LoginInfoDatabaseHelper
 import com.example.loginapp.Database.loginInfo
+import com.example.loginapp.Database.UserInfo
 
 
 class signUpActivity : AppCompatActivity() {
@@ -20,6 +21,7 @@ class signUpActivity : AppCompatActivity() {
     private lateinit var passwordSignup : EditText
     private lateinit var signupBtn : Button
     private lateinit var db : LoginInfoDatabaseHelper
+    private lateinit var db2 : LoginInfoDatabaseHelper
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +34,7 @@ class signUpActivity : AppCompatActivity() {
         passwordSignup = findViewById(R.id.password_signup)
         signupBtn = findViewById(R.id.button_id_signup)
         db = LoginInfoDatabaseHelper(this)
+        db2 = LoginInfoDatabaseHelper(this)
 
         // this is the back arrow button that takes you back to login page
         backBtn.setOnClickListener{
@@ -51,8 +54,10 @@ class signUpActivity : AppCompatActivity() {
             }
 
             // functions to save our data
+            // when we make a new account, we should also initilize the other table for saving the user's info
             val loginInfo = loginInfo(username, password)
             db.insertLoginInfo(loginInfo)
+            db2.insertUserInfo(UserInfo(username, "", "", "", "", "", "", "", ""))
             finish()
 
             // this assumes that something was inputted for signup

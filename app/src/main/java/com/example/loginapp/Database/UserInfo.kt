@@ -1,6 +1,7 @@
 package com.example.loginapp.Database
 
-data class UserInfo(val username: String, val fname: String, val lname: String,
-                    val address: String, val city: String, val prov: String,
-                    val postal: String, val email: String, val phone: Int) {
+data class UserInfo(val username: String, var fname: String, var lname: String,
+                    var email: String, var phone: String,
+                    var city: String, var prov: String,
+                    var address: String, var postal: String) {
 }
