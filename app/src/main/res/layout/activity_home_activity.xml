@@ -183,6 +183,13 @@
                     android:layout_height="match_parent"
                     android:contentDescription=""
                     app:srcCompat="@drawable/homecarl"/>
+                <ImageButton
+                    android:layout_toEndOf="@id/carlbutton"
+                    android:id="@+id/maxbutton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:contentDescription=""
+                    app:srcCompat="@drawable/homemax"/>
             </RelativeLayout>
 
 

@@ -24,7 +24,8 @@
                     android:id="@+id/img_photo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="16dp"/>
+                    android:layout_marginHorizontal="16dp"
+                    android:background="@color/black"/>
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
