@@ -12,7 +12,14 @@ import com.google.android.material.navigation.NavigationBarView
 
 class profileInfoActivity : AppCompatActivity() {
 
-    lateinit var resultTextView: TextView
+    lateinit var firstname: TextView
+    lateinit var lastname: TextView
+    lateinit var email: TextView
+    lateinit var phonenum: TextView
+    lateinit var city: TextView
+    lateinit var prov: TextView
+    lateinit var address: TextView
+    lateinit var postcode: TextView
     lateinit var buttonEdit: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,7 +27,15 @@ class profileInfoActivity : AppCompatActivity() {
         setContentView(R.layout.activity_profileinfo)
         buttonEdit = findViewById(R.id.btnEdit)
 
-        resultTextView = findViewById(R.id.tvResult)
+        firstname = findViewById<TextView>(R.id.fname)
+        lastname = findViewById<TextView>(R.id.lname)
+        email = findViewById<TextView>(R.id.email)
+        phonenum = findViewById<TextView>(R.id.phone)
+        city = findViewById<TextView>(R.id.city)
+        prov = findViewById<TextView>(R.id.prov)
+        address = findViewById<TextView>(R.id.address)
+        postcode = findViewById<TextView>(R.id.postcode)
+
 
         val sharedPref = getSharedPreferences("Profile Data", MODE_PRIVATE)
         val fname = sharedPref.getString("First Name", "")
@@ -32,7 +47,7 @@ class profileInfoActivity : AppCompatActivity() {
         val email = sharedPref.getString("Email Address", "")
         val phonenum = sharedPref.getString("Phone Number", "")
         //All the info shown in textview box
-        resultTextView.text = "First Name : $fname \nLast Name : $lname \nStreet Address : $address \nCity : $city \nProvince : $prov \nPostal Code : $postcode \nEmail Address : $email \nPhone Number : $phonenum"
+        //resultTextView.text = "First Name : $fname \nLast Name : $lname \nStreet Address : $address \nCity : $city \nProvince : $prov \nPostal Code : $postcode \nEmail Address : $email \nPhone Number : $phonenum"
 
         buttonEdit.setOnClickListener{
             val mainActIntent = Intent(this, profileEditActivity::class.java)

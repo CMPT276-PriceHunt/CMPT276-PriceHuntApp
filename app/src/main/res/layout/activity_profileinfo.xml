@@ -23,6 +23,7 @@
         android:text="Profile Information"/>
 
     <LinearLayout
+        android:id="@+id/box1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -30,6 +31,7 @@
         android:layout_marginTop="50dp">
 
         <TextView
+            android:id="@+id/fname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -41,6 +43,7 @@
             android:textStyle="bold"/>
 
         <TextView
+            android:id="@+id/lname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -56,11 +59,44 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
+        android:layout_gravity="center"
         android:gravity="center"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="35dp">
 
         <TextView
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:hint=" Email "
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:hint=" Phone Number "
+            android:layout_marginTop="35dp"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="35dp">
+
+        <TextView
+            android:id="@+id/city"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -68,19 +104,49 @@
             android:textSize="20dp"
             android:hint=" City "
             android:layout_marginRight="10dp"
-            android:textColor="@color/black"
-            android:textStyle="bold"/>
+            android:textColor="@color/black" />
 
         <TextView
+            android:id="@+id/prov"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:hint=" Province "
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="35dp">
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:hint=" Street Address "
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/postcode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
             android:textSize="20dp"
             android:hint=" Postal Code "
-            android:layout_marginLeft="10dp"
-            android:textColor="@color/black"
-            android:textStyle="bold"/>
+            android:layout_marginTop="30dp"
+            android:textColor="@color/black"/>
 
     </LinearLayout>
 
@@ -90,7 +156,7 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:background="@drawable/button_background"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="150dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_gravity="center"
