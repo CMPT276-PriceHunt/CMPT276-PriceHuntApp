@@ -22,6 +22,7 @@ class profileInfoActivity : AppCompatActivity() {
     lateinit var address: TextView
     lateinit var postcode: TextView
     lateinit var buttonEdit: Button
+    lateinit var buttonSignOut: Button
 
     lateinit var db: LoginInfoDatabaseHelper
 
@@ -30,6 +31,7 @@ class profileInfoActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_profileinfo)
         buttonEdit = findViewById(R.id.btnEdit)
+        buttonSignOut = findViewById(R.id.btnSignOut)
         db = LoginInfoDatabaseHelper(this)
 
         firstname = findViewById<TextView>(R.id.fname)
@@ -56,6 +58,11 @@ class profileInfoActivity : AppCompatActivity() {
         buttonEdit.setOnClickListener{
             val mainActIntent = Intent(this, profileEditActivity::class.java)
             startActivity(mainActIntent)
+        }
+
+        buttonSignOut.setOnClickListener{
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
         }
 
         // Initialize and assign variable
