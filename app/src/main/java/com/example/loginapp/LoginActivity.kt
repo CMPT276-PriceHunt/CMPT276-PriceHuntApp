@@ -15,6 +15,7 @@ import com.example.loginapp.Database.LoginInfoDatabaseHelper
 
 class LoginActivity : AppCompatActivity() {
     // makes it so that we can access username in profileEdit so we can make changes to db
+    // test
     companion object{
         var username = ""
     }
@@ -56,6 +57,7 @@ class LoginActivity : AppCompatActivity() {
 
                     val intent = Intent(this, HomeActivity::class.java)
                     startActivity(intent)
+                    finish()
                 } else {
                     Toast.makeText(this, "Incorrect username or password", Toast.LENGTH_LONG).show()
                     return@setOnClickListener
