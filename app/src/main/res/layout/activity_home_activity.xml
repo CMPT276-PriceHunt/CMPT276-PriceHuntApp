@@ -12,7 +12,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/bottom_navigation">
+        android:layout_above="@id/bottom_navigation"
+        android:id="@+id/scroll_view">
 
 
         <RelativeLayout
@@ -30,6 +31,11 @@
                 android:background="@android:color/transparent"
                 app:srcCompat="@drawable/featuredsection"
                 />
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragment_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/featured" />
 
             <ImageView
                 android:contentDescription="@string/discover_menswear"

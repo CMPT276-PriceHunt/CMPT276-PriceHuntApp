@@ -40,7 +40,6 @@ public class CarlsActivity extends AppCompatActivity {
         });
         Button btnBackToHome = findViewById(R.id.btn_back_to_home);
         btnBackToHome.setOnClickListener(v ->
-
         {
             Intent intent = new Intent(CarlsActivity.this, HomeActivity.class);
             startActivity(intent);

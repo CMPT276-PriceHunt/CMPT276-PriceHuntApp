@@ -24,4 +24,6 @@
     <string name="confirm">Confirm</string>
     <string name="close">Close</string>
     <string name="steal_their_look">steal their look\n</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
