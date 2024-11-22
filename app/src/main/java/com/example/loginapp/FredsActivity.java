@@ -88,7 +88,7 @@ public class FredsActivity extends AppCompatActivity {
 
             HomeWishlist.addItemToWishlist(FredsActivity.this, imageResource2, name2, price2, selectedFolderName);
 
-            int imageResource3 = R.drawable.fredboxers;
+            int imageResource3 = R.drawable.fredbox;
             String name3 = "Louis Vuitton - Elysee Palace Boxer Shorts";
             double price3 = 1930;
             HomeWishlist.addItemToWishlist(FredsActivity.this, imageResource3, name3, price3, selectedFolderName);

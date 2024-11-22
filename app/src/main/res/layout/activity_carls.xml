@@ -83,12 +83,20 @@
                 android:layout_below="@id/shoes"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="16dp"
                 android:layout_marginStart="270dp"
                 android:paddingHorizontal="30dp"
                 android:paddingVertical="10dp"
                 android:text="@string/add_to_wishlist"
                 android:textSize="10sp"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/carltotal"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="10dp">
+            </ImageView>
         </RelativeLayout>
     </ScrollView>
 

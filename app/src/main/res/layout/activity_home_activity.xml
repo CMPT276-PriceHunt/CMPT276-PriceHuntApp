@@ -178,21 +178,21 @@
                 android:layout_marginHorizontal="10dp">
             <ImageButton
                 android:id="@+id/fredbutton"
-                android:layout_width="wrap_content"
+                android:layout_width="180dp"
                 android:layout_height="match_parent"
                 android:contentDescription=""
                 app:srcCompat="@drawable/fredbutton"/>
                 <ImageButton
                     android:layout_toEndOf="@id/fredbutton"
                     android:id="@+id/carlbutton"
-                    android:layout_width="wrap_content"
+                    android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:contentDescription=""
                     app:srcCompat="@drawable/homecarl"/>
                 <ImageButton
-                    android:layout_toEndOf="@id/carlbutton"
+                    android:layout_below="@id/carlbutton"
                     android:id="@+id/maxbutton"
-                    android:layout_width="wrap_content"
+                    android:layout_width="360dp"
                     android:layout_height="match_parent"
                     android:contentDescription=""
                     app:srcCompat="@drawable/homemax"/>
