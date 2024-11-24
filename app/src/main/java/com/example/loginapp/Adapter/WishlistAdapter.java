@@ -81,6 +81,7 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.Wishli
         builder.setPositiveButton("Delete", (dialogInterface, which) -> {
             try {
                 // Remove from both lists
+                parentFolder.setTotal(parentFolder.getTotal() - itemList.get(position).getPrice());
                 itemList.remove(position);
                 parentFolder.getItems().remove(position);
 

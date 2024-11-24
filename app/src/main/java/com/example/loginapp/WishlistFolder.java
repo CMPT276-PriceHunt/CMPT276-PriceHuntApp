@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class WishlistFolder implements Parcelable {
     private String name;
+    private Double total;
     private ArrayList<WishlistItem> items;
     // transient keyword prevents this field from being serialized by Gson
     private transient boolean isExpanded;
@@ -17,6 +18,7 @@ public class WishlistFolder implements Parcelable {
         this.name = name;
         this.items = new ArrayList<>();
         this.isExpanded = false;
+        this.total = 0.00;
     }
 
     // Parcel constructor for recreating object from Parcel
@@ -24,6 +26,7 @@ public class WishlistFolder implements Parcelable {
         name = in.readString();
         items = in.createTypedArrayList(WishlistItem.CREATOR);
         isExpanded = in.readByte() != 0;
+        total = in.readDouble();
     }
 
     // Implementation of Parcelable methods
@@ -32,12 +35,15 @@ public class WishlistFolder implements Parcelable {
         dest.writeString(name);
         dest.writeTypedList(items);
         dest.writeByte((byte) (isExpanded ? 1 : 0));
+        dest.writeDouble(total);
     }
 
     @Override
     public int describeContents() {
         return 0;
     }
+    public Double getTotal() { return total; }
+    public void setTotal(Double total) { this.total = total; }
 
     // Parcelable CREATOR for creating instances of this class from a Parcel
     public static final Creator<WishlistFolder> CREATOR = new Creator<WishlistFolder>() {
@@ -58,5 +64,6 @@ public class WishlistFolder implements Parcelable {
     public ArrayList<WishlistItem> getItems() { return items; }
     public boolean isExpanded() { return isExpanded; }
     public void setExpanded(boolean expanded) { isExpanded = expanded; }
-    public void addItem(WishlistItem item) { items.add(item); }
+    public void addItem(WishlistItem item) { items.add(item);
+                                            total += item.getPrice(); }
 }

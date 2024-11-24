@@ -19,6 +19,7 @@ import com.example.loginapp.WishlistFolder;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 // Adapter for managing and displaying wishlist folders in a RecyclerView
 public class WishlistFolderAdapter extends RecyclerView.Adapter<WishlistFolderAdapter.FolderViewHolder> {
@@ -42,6 +43,7 @@ public class WishlistFolderAdapter extends RecyclerView.Adapter<WishlistFolderAd
     public void onBindViewHolder(@NonNull FolderViewHolder holder, int position) {
         WishlistFolder folder = folders.get(position);
         holder.tvFolderName.setText(folder.getName());
+        holder.tvTotalPrice.setText(String.format(Locale.getDefault(), "($%.2f)", folder.getTotal()));
 
         // Create adapter and set up RecyclerView
         WishlistAdapter itemAdapter = new WishlistAdapter(folder.getItems(), folder);
@@ -169,9 +171,12 @@ public class WishlistFolderAdapter extends RecyclerView.Adapter<WishlistFolderAd
         ImageButton btnExpand, btnDelete;
         RecyclerView rvItems;
 
+        TextView tvTotalPrice;
+
         public FolderViewHolder(@NonNull View itemView) {
             super(itemView);
             tvFolderName = itemView.findViewById(R.id.tv_folder_name);
+            tvTotalPrice = itemView.findViewById(R.id.total_price);
             btnExpand = itemView.findViewById(R.id.btn_expand);
             btnDelete = itemView.findViewById(R.id.btn_delete);
             rvItems = itemView.findViewById(R.id.rv_items);
