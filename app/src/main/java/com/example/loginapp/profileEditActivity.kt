@@ -62,10 +62,12 @@ class profileEditActivity : AppCompatActivity() {
             val lname = editTextLastName.text.toString()
             val email = editTextEmailAddress.text.toString()
             val phone =editTextPhoneNumber.text.toString()
-            val city = editTextCity.text.toString()
+            var city = editTextCity.text.toString()
             val province = editTextProvince.text.toString()
             val address = editTextAddress.text.toString()
             val postal = editTextPostalCode.text.toString()
+
+            city += ","
 
             if (fname.isEmpty() || lname.isEmpty() || email.isEmpty() || phone.isEmpty() || city.isEmpty()
                 || province.isEmpty() || address.isEmpty() || postal.isEmpty() )

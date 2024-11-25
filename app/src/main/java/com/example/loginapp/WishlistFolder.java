@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 
 public class WishlistFolder implements Parcelable {
@@ -57,6 +58,7 @@ public class WishlistFolder implements Parcelable {
             return new WishlistFolder[size];
         }
     };
+
 
     // Getters and setters
     public String getName() { return name; }

@@ -131,4 +131,6 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.Wishli
             btnDeleteItem = itemView.findViewById(R.id.btn_delete_item);
         }
     }
+
+
 }

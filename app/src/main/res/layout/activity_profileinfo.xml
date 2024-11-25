@@ -9,172 +9,188 @@
     android:orientation="vertical"
     tools:context=".profileInfoActivity">
 
-
+    <!-- Title Section -->
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:textSize="30dp"
+        android:text="Profile Information"
+        android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:text="Profile Information"/>
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_gravity="center" />
 
+    <!-- Name Fields (First Name and Last Name) -->
     <LinearLayout
         android:id="@+id/box1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="40dp">
 
         <TextView
             android:id="@+id/fname"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:textSize="25dp"
-            android:hint=" First Name "
+            android:layout_weight="1"
+            android:hint="First Name"
+            android:textSize="20sp"
             android:textColor="@color/black"
-            android:layout_marginRight="10dp"
-            android:textStyle="bold"/>
+            android:padding="10dp"
+            android:layout_marginEnd="5dp"
+            android:textStyle="bold"
+            android:gravity="right"/>
 
         <TextView
             android:id="@+id/lname"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:textSize="25dp"
-            android:hint=" Last Name "
+            android:layout_weight="1"
+            android:hint="Last Name"
+            android:textSize="20sp"
             android:textColor="@color/black"
-            android:layout_marginLeft="10dp"
-            android:textStyle="bold"/>
+            android:padding="10dp"
+            android:layout_marginStart="5dp"
+            android:textStyle="bold"
+            android:gravity="left"/>
 
     </LinearLayout>
 
+    <!-- Email and Phone -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_gravity="center"
         android:gravity="center"
-        android:layout_marginTop="35dp">
+        android:layout_marginTop="25dp">
 
         <TextView
             android:id="@+id/email"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:hint="Email"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:padding="10dp"
             android:gravity="center"
-            android:textSize="20dp"
-            android:hint=" Email "
-            android:textColor="@color/black"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/phone"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:hint="Phone Number"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:padding="10dp"
+            android:layout_marginTop="20dp"
             android:gravity="center"
-            android:textSize="20dp"
-            android:hint=" Phone Number "
-            android:layout_marginTop="35dp"
-            android:textColor="@color/black" />
+            android:textStyle="bold" />
 
     </LinearLayout>
 
+    <!-- City and Province -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
-        android:layout_gravity="center"
-        android:layout_marginTop="35dp">
+        android:layout_marginTop="25dp">
 
         <TextView
             android:id="@+id/city"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:textSize="20dp"
-            android:hint=" City "
-            android:layout_marginRight="10dp"
-            android:textColor="@color/black" />
+            android:layout_weight="1"
+            android:hint="City"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:padding="1dp"
+            android:layout_marginEnd="1dp"
+            android:textStyle="bold"
+            android:gravity="right"/>
 
         <TextView
             android:id="@+id/prov"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:textSize="20dp"
-            android:hint=" Province "
-            android:layout_marginLeft="10dp"
-            android:textColor="@color/black"/>
+            android:layout_weight="1"
+            android:hint="Province"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:padding="1dp"
+            android:layout_marginStart="1dp"
+            android:textStyle="bold"
+            android:gravity="left"/>
 
     </LinearLayout>
 
+    <!-- Address and Postal Code -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_gravity="center"
         android:gravity="center"
-        android:layout_marginTop="35dp">
+        android:layout_marginTop="25dp">
 
         <TextView
             android:id="@+id/address"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:hint="Street Address"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:padding="10dp"
             android:gravity="center"
-            android:textSize="20dp"
-            android:hint=" Street Address "
-            android:textColor="@color/black" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/postcode"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:hint="Postal Code"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:padding="10dp"
+            android:layout_marginTop="20dp"
             android:gravity="center"
-            android:textSize="20dp"
-            android:hint=" Postal Code "
-            android:layout_marginTop="30dp"
-            android:textColor="@color/black"/>
+            android:textStyle="bold" />
 
     </LinearLayout>
 
-
-    <Button
-        android:id="@+id/btnEdit"
-        android:layout_width="200dp"
+    <!-- Buttons (Edit Profile and Sign Out) -->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_background"
-        android:layout_marginTop="150dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_gravity="center"
+        android:orientation="vertical"
         android:gravity="center"
-        android:text="Edit Profile" />
+        android:layout_marginTop="100dp">
 
-    <Button
-        android:id="@+id/btnSignOut"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_background"
-        android:layout_marginTop="80dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="Sign Out" />
+        <Button
+            android:id="@+id/btnEdit"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Edit Profile"
+            android:background="@drawable/button_background"
+            android:textSize="16sp"
+            android:layout_marginBottom="20dp"
+            android:padding="10dp" />
 
+        <Button
+            android:id="@+id/btnSignOut"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Sign Out"
+            android:background="@drawable/button_background"
+            android:textSize="16sp"
+            android:padding="10dp"
+            />
+
+    </LinearLayout>
 
     <View
         android:layout_width="match_parent"
