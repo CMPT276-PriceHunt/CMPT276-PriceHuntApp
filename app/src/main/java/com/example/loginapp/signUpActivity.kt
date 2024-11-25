@@ -53,19 +53,26 @@ class signUpActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // functions to save our data
-            // when we make a new account, we should also initilize the other table for saving the user's info
-            val loginInfo = loginInfo(username, password)
-            db.insertLoginInfo(loginInfo)
-            db2.insertUserInfo(UserInfo(username, "", "", "", "", "", "", "", ""))
-            finish()
+            // check if username already exists (true == already in database)
+            if(!db.validSignUp(username)) {
+                // functions to save our data
+                // when we make a new account, we should also initilize the other table for saving the user's info
+                val loginInfo = loginInfo(username, password)
+                db.insertLoginInfo(loginInfo)
+                db2.insertUserInfo(UserInfo(username, "", "", "", "", "", "", "", ""))
+                finish()
 
-            // this assumes that something was inputted for signup
-            Toast.makeText(this, "Sign Up Successful!", Toast.LENGTH_LONG).show()
+                // this assumes that something was inputted for signup
+                Toast.makeText(this, "Sign Up Successful!", Toast.LENGTH_LONG).show()
 
-            // back to login screen
-            val intent = Intent(this,LoginActivity::class.java)
-            startActivity(intent)
+                // back to login screen
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+            }
+            else{
+                Toast.makeText(this, "Username already exists", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
         }
     }
 }

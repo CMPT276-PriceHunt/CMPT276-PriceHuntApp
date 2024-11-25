@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.loginapp.Database.LoginInfoDatabaseHelper
 
@@ -26,12 +27,15 @@ class profileEditActivity : AppCompatActivity() {
     lateinit var buttonSave: Button
     lateinit var buttonBack: Button
     lateinit var buttonClear: Button
+    lateinit var buttonDelete: Button
 
     lateinit var db: LoginInfoDatabaseHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profileedit)
+
+
         editTextFirstName = findViewById(R.id.etFirstName)
         editTextLastName = findViewById(R.id.etLastName)
         editTextEmailAddress = findViewById(R.id.etEmailAddress)
@@ -44,8 +48,10 @@ class profileEditActivity : AppCompatActivity() {
         buttonSave = findViewById(R.id.btnSave)
         buttonBack = findViewById(R.id.btnBack)
         buttonClear = findViewById(R.id.btnClear)
+        buttonDelete = findViewById(R.id.btnDelete)
         db = LoginInfoDatabaseHelper(this)
 
+        // read the info from tables, and display on screen
         val info = db.readUserInfo(username)
         editTextFirstName.setText(info?.fname)
         editTextLastName.setText(info?.lname)
@@ -126,5 +132,25 @@ class profileEditActivity : AppCompatActivity() {
             val clearBtnIntent = Intent(this, profileInfoActivity::class.java)
             startActivity(clearBtnIntent)
         }
+
+        buttonDelete.setOnClickListener{
+            val alertDialogBuilder = AlertDialog.Builder(this)
+            alertDialogBuilder.setTitle("Delete Account")
+            alertDialogBuilder.setMessage("Are you sure you want to delete your account? This action cannot be undone.")
+            alertDialogBuilder.setCancelable(false)
+            alertDialogBuilder.setPositiveButton("Yes") { _, _ ->
+                db.deleteUserInfo(username)
+                finish()
+                Toast.makeText(this, "Account has been deleted!", Toast.LENGTH_SHORT).show()
+                val deleteBtnIntent = Intent(this, LoginActivity::class.java)
+                startActivity(deleteBtnIntent)
+            }
+            alertDialogBuilder.setNeutralButton("Cancel") { _, _ ->
+                Toast.makeText(this, "Deletion cancelled.", Toast.LENGTH_SHORT).show()
+            }
+            val alertDialog = alertDialogBuilder.create()
+            alertDialog.show()
+        }
+
     }
 }

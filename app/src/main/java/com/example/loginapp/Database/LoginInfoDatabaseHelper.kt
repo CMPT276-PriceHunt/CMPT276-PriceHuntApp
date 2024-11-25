@@ -71,7 +71,17 @@ class LoginInfoDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATA
         db.close()
         // return boolean
         return found
+    }
 
+    fun validSignUp(username: String) : Boolean{
+        val db = readableDatabase
+        val query = "SELECT $COLUMN_USERNAME FROM $TABLE_NAME WHERE $COLUMN_USERNAME = ?"
+        val cursor = db.rawQuery(query, arrayOf(username))
+
+        val valid = cursor.count > 0
+        cursor.close()
+        db.close()
+        return valid
     }
 
     fun insertUserInfo(userInfo: UserInfo){
@@ -131,4 +141,13 @@ class LoginInfoDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATA
         db.close()
     }
 
+    fun deleteUserInfo(username: String){
+        val db = writableDatabase
+        val whereClause = "$COLUMN_USERNAME = ?"
+        val whereArgs = arrayOf(username)
+        // deletes info from both tables
+        db.delete(TABLE_NAME, whereClause, whereArgs)
+        db.delete(TABLE_NAME1, whereClause, whereArgs)
+        db.close()
+    }
 }
