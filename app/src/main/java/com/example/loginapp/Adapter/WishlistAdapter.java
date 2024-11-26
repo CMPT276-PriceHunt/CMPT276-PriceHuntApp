@@ -22,9 +22,18 @@ import java.util.Locale;
 
 // Adapter for displaying wishlist items in a RecyclerView
 public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.WishlistViewHolder> {
+    public interface OnItemDeletedListener {
+        void onItemDeleted(WishlistFolder folder);
+    }
+
     private ArrayList<WishlistItem> itemList;
     private WishlistFolder parentFolder;
     private Context context;
+    private OnItemDeletedListener itemDeletedListener;
+
+    public void setOnItemDeletedListener(OnItemDeletedListener listener) {
+        this.itemDeletedListener = listener;
+    }
 
     // Initialize adapter with list of wishlist items and parent folder
     public WishlistAdapter(ArrayList<WishlistItem> itemList, WishlistFolder parentFolder) {
@@ -89,6 +98,11 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.Wishli
                 notifyItemRemoved(position);
                 notifyItemRangeChanged(position, itemList.size());
 
+                // Notify listener about the change
+                if (itemDeletedListener != null) {
+                    itemDeletedListener.onItemDeleted(parentFolder);
+                }
+
                 // Save changes if in ViewWishlistActivity
                 if (context instanceof ViewWishlistActivity) {
                     ((ViewWishlistActivity) context).saveFolders();
@@ -131,6 +145,4 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.Wishli
             btnDeleteItem = itemView.findViewById(R.id.btn_delete_item);
         }
     }
-
-
 }

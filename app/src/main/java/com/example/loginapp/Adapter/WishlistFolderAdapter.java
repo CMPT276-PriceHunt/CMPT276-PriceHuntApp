@@ -47,6 +47,10 @@ public class WishlistFolderAdapter extends RecyclerView.Adapter<WishlistFolderAd
 
         // Create adapter and set up RecyclerView
         WishlistAdapter itemAdapter = new WishlistAdapter(folder.getItems(), folder);
+        itemAdapter.setOnItemDeletedListener(updatedFolder -> {
+            holder.tvTotalPrice.setText(String.format(Locale.getDefault(), "($%.2f)", updatedFolder.getTotal()));
+        });
+
         holder.rvItems.setLayoutManager(new LinearLayoutManager(holder.itemView.getContext()) {
             @Override
             public boolean supportsPredictiveItemAnimations() {
@@ -170,7 +174,6 @@ public class WishlistFolderAdapter extends RecyclerView.Adapter<WishlistFolderAd
         TextView tvFolderName;
         ImageButton btnExpand, btnDelete;
         RecyclerView rvItems;
-
         TextView tvTotalPrice;
 
         public FolderViewHolder(@NonNull View itemView) {
