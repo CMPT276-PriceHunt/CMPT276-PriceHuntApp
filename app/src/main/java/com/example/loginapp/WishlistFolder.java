@@ -9,7 +9,7 @@ import java.util.Locale;
 
 public class WishlistFolder implements Parcelable {
     private String name;
-    private Double total;
+    private double total;
     private ArrayList<WishlistItem> items;
     // transient keyword prevents this field from being serialized by Gson
     private transient boolean isExpanded;
@@ -19,7 +19,7 @@ public class WishlistFolder implements Parcelable {
         this.name = name;
         this.items = new ArrayList<>();
         this.isExpanded = false;
-        this.total = 0.00;
+        this.total = 0.0;
     }
 
     // Parcel constructor for recreating object from Parcel
@@ -66,6 +66,12 @@ public class WishlistFolder implements Parcelable {
     public ArrayList<WishlistItem> getItems() { return items; }
     public boolean isExpanded() { return isExpanded; }
     public void setExpanded(boolean expanded) { isExpanded = expanded; }
-    public void addItem(WishlistItem item) { items.add(item);
-                                            total += item.getPrice(); }
+
+    public void addItem(WishlistItem item) {
+        if (item == null) {
+            throw new IllegalArgumentException("Item cannot be null");
+        }
+        items.add(item);
+        total += item.getPrice();
+    }
 }
