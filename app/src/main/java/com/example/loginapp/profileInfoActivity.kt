@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.loginapp.Database.LoginInfoDatabaseHelper
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -61,8 +62,18 @@ class profileInfoActivity : AppCompatActivity() {
         }
 
         buttonSignOut.setOnClickListener{
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
+            val alertDialogBuilder = AlertDialog.Builder(this)
+            alertDialogBuilder.setTitle("Sign Out")
+            alertDialogBuilder.setMessage("Are you sure you want to sign out?")
+            alertDialogBuilder.setCancelable(false)
+            alertDialogBuilder.setPositiveButton("Yes") { _, _ ->
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+            }
+            alertDialogBuilder.setNeutralButton("Cancel") { _, _ ->
+            }
+            val alertDialog = alertDialogBuilder.create()
+            alertDialog.show()
         }
 
         // Initialize and assign variable

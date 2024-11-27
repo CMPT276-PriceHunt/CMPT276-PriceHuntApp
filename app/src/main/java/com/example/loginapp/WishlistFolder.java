@@ -43,7 +43,14 @@ public class WishlistFolder implements Parcelable {
     public int describeContents() {
         return 0;
     }
-    public Double getTotal() { return total; }
+    public Double getTotal() {
+        if(total < 0) {
+            return 0.0;
+        }
+        else{
+            return total;
+        }
+    }
     public void setTotal(Double total) { this.total = total; }
 
     // Parcelable CREATOR for creating instances of this class from a Parcel

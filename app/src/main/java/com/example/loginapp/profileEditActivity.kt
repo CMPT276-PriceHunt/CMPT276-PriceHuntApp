@@ -114,23 +114,35 @@ class profileEditActivity : AppCompatActivity() {
         }
 
         buttonClear.setOnClickListener{
+            val alertDialogBuilder = AlertDialog.Builder(this)
+            alertDialogBuilder.setTitle("Clear All Fields")
+            alertDialogBuilder.setMessage("Are you sure you want to clear all fields?")
+            alertDialogBuilder.setCancelable(false)
+            alertDialogBuilder.setPositiveButton("Yes") { _, _ ->
 
-            val fname = ""
-            val lname = ""
-            val email = ""
-            val phone = ""
-            val city = ""
-            val province = ""
-            val address = ""
-            val postal = ""
+                val fname = ""
+                val lname = ""
+                val email = ""
+                val phone = ""
+                val city = ""
+                val province = ""
+                val address = ""
+                val postal = ""
 
-            val changeInfo = UserInfo(username,fname, lname, email, phone, city, province, address, postal)
-            db.updateUserInfo(changeInfo)
-            finish()
+                val changeInfo =
+                    UserInfo(username, fname, lname, email, phone, city, province, address, postal)
+                db.updateUserInfo(changeInfo)
+                finish()
 
-            Toast.makeText(this, "All fields have been cleared!", Toast.LENGTH_SHORT).show()
-            val clearBtnIntent = Intent(this, profileInfoActivity::class.java)
-            startActivity(clearBtnIntent)
+                Toast.makeText(this, "All fields have been cleared!", Toast.LENGTH_SHORT).show()
+                val clearBtnIntent = Intent(this, profileInfoActivity::class.java)
+                startActivity(clearBtnIntent)
+            }
+            alertDialogBuilder.setNeutralButton("Cancel") { _, _ ->
+                Toast.makeText(this, "Clearing cancelled.", Toast.LENGTH_SHORT).show()
+            }
+            val alertDialog = alertDialogBuilder.create()
+            alertDialog.show()
         }
 
         buttonDelete.setOnClickListener{
@@ -151,6 +163,5 @@ class profileEditActivity : AppCompatActivity() {
             val alertDialog = alertDialogBuilder.create()
             alertDialog.show()
         }
-
     }
 }
